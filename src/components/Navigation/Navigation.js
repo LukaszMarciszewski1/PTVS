@@ -15,10 +15,10 @@ import img3 from '../../assets/images/pic03.jpg'
 import img4 from '../../assets/images/pic04.jpg'
 import img5 from '../../assets/images/pic05.jpg'
 import img6 from '../../assets/images/pic06.jpg'
-import img8 from '../../assets/images/pic08.jpg'
-import img9 from '../../assets/images/pic09.jpg'
-import img10 from '../../assets/images/pic10.jpg'
-import img11 from '../../assets/images/pic11.jpg'
+import img7 from '../../assets/images/pic08.jpg'
+import img8 from '../../assets/images/pic09.jpg'
+import img9 from '../../assets/images/pic10.jpg'
+import img10 from '../../assets/images/pic11.jpg'
 
 
 function TabPanel(props) {
@@ -100,6 +100,15 @@ const  Navigation = () => {
     setValue(newValue);
   };
 
+// const renderImg = () => {
+//   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9]
+//   const index = Math.floor(Math.random() * images.length)
+//   const image = images[index]
+//   return(
+//     image
+//   )
+// }  
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent" elevation={3}>
@@ -120,22 +129,22 @@ const  Navigation = () => {
         </StyledTabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Tech name={'Nauka i technika'} img={img1}/>
+        <Tech name={'Nauka i technika - '} img={img1} category={'Nauka i technika'}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Tech name={'Kultura i sztuka'} img={img2}/>
+      <Tech name={'Kultura i sztuka'} img={img2} category={'Kultura i sztuka'}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Tech name={'Przedsiębiorczośc i praca'} img={img3}/>
+      <Tech name={'Przedsiębiorczośc i praca'} img={img3} category={'Przedsiębiorczośc i praca'}/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Tech name={'Zdrowie i ekologia'} img={img4}/>
+      <Tech name={'Zdrowie i ekologia'} img={img4} category={'Zdrowie i ekologia'}/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-      <Tech name={'Turystyka i rekreacja'} img={img9}/>
+      <Tech name={'Turystyka i rekreacja'} img={img9} category={'Turystyka i rekreacja'}/>
       </TabPanel>
       <TabPanel value={value} index={5}>
-      <Tech name={'Kanał sprzedażowy'} img={img10}/>
+      <Tech name={'Kanał sprzedażowy'} img={img10} category={'Kanał sprzedażowy'}/>
       </TabPanel>
     </div>
   );

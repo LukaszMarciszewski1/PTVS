@@ -1,7 +1,8 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, withStyles, Link } from '@material-ui/core'
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -12,9 +13,10 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
+import Button from '@material-ui/core/Button';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import PlayCircleFilledRoundedIcon from '@material-ui/icons/PlayCircleFilledRounded';
 // Import Swiper styles
 // Import Swiper styles
 import 'swiper/swiper.scss';
@@ -64,8 +66,9 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // maxWidth: 345,
-    margin: 10
+    color: 'white',
+    margin: 10,
+    backgroundColor: '#202438'
   },
   media: {
     height: 200,
@@ -78,13 +81,34 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '8%',
     marginTop: '4%'
   },
-  title: {
+  titleContent: {
     display: 'flex',
     opacity: .8,
-    alignItems: 'flex-end'
-  }
+    alignItems: 'flex-end',
+    margin: 15
+  },
+  titleText: {
+    margin: '0 20px',
+  },
+  cardContent: {
+    marginBottom: 30,
+    position: 'relative'
+  },
+  titleCategory: {
+    fontSize: 13,
+    fontWeight: 'lighter',
+    letterSpacing: 1
+  },
+  iconPlay: {
+    position: 'absolute',
+    top: -25,
+    right: 25,
+    width: 60,
+    height: 60,
+    // color: '#2962ff',
+    color: 'white',
+  },
 }));
-
 
 const responsive = {
   desktop: {
@@ -109,7 +133,23 @@ const responsive = {
   }
 };
 
-const Tech = ({name, img}) => {
+const StyledBreadcrumb = withStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.grey[100],
+    height: theme.spacing(3),
+    color: theme.palette.grey[800],
+    fontWeight: theme.typography.fontWeightRegular,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.grey[300],
+    },
+    '&:active': {
+      boxShadow: theme.shadows[1],
+      backgroundColor: emphasize(theme.palette.grey[300], 0.12),
+    },
+  },
+}));
+
+const Tech = ({name, img, category}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -118,29 +158,30 @@ const Tech = ({name, img}) => {
   };
     return ( 
       <div className={classes.container}>
-      <div className={classes.title}><h2>{name}</h2><p style={{marginLeft: 10}}>lorem ipsum doler text across all continents</p></div>
+        <div className={classes.titleContent}>
+        <Button 
+          component='a'
+          href="#"
+          variant="outlined" 
+          color="inherit"
+          endIcon={<ChevronRightIcon/>}
+          >
+          Przejdź
+        </Button>
+        <Typography variant="h6" component="h2" className={classes.titleText}>
+          {name}
+        </Typography>
+        <Typography variant="subtitle1" style={{fontWeight:'lighter', opacity: .7}}>
+          lorem ipsum dolor text
+        </Typography>
+        </div>
         <Carousel
-          additionalTransfrom={0}
-          arrows
-          swipeable={true}
-          draggable={true}
+          // draggable={true}
           responsive={responsive}
-          renderButtonGroupOutside={false}
-          renderDotsOutside={false}
           ssr={true} // means to render carousel on server-side.
-          infinite={true}
           partialVisible={true}
-          slidesToSlide={1}
-          autoPlaySpeed={1000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
           containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          itemClass="carousel-item-padding-40-px"
-                    // autoPlay={this.props.deviceType !== "mobile" ? true : false}
-                    // deviceType={this.props.deviceType}
-          // dotListClass="custom-dot-list-style"
+          // deviceType={deviceType}
         >
               {data.map( card => (
                 <Card className={classes.root} key={card.id}>
@@ -150,13 +191,16 @@ const Tech = ({name, img}) => {
                       image={img}
                       title="Contemplative Reptile"
                     />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
+                    <CardContent className={classes.cardContent}>
+                    <PlayCircleFilledRoundedIcon className={classes.iconPlay} fontSize='large'/>
+                    <Typography className={classes.titleCategory} gutterBottom style={{opacity: .5}}>
+                       {category}
+                    </Typography>
+                      <Typography gutterBottom variant="h6" component="h3" color="inherit">
                         Lizard
                       </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                      <Typography variant="body2" component="p" style={{opacity: .5}}>
+                        Lizards are a widespread group of squamate 
                       </Typography>
                     </CardContent>
                   </CardActionArea>
