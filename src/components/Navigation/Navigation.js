@@ -4,10 +4,22 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import TabScrollButton from '@material-ui/core/TabScrollButton';
+import { Avatar, Card, TextField, CardHeader, CardContent, Button} from '@material-ui/core'
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import Tech from '../Carousel/Tech'
+import img1 from '../../assets/images/pic01.jpg'
+import img2 from '../../assets/images/pic02.jpg'
+import img3 from '../../assets/images/pic03.jpg'
+import img4 from '../../assets/images/pic04.jpg'
+import img5 from '../../assets/images/pic05.jpg'
+import img6 from '../../assets/images/pic06.jpg'
+import img8 from '../../assets/images/pic08.jpg'
+import img9 from '../../assets/images/pic09.jpg'
+import img10 from '../../assets/images/pic10.jpg'
+import img11 from '../../assets/images/pic11.jpg'
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -21,8 +33,8 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
+        <Box>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -44,6 +56,7 @@ function a11yProps(index) {
 const StyledTabs = withStyles({
     root: {
         padding: 20,
+        backgroundColor: '#10171d',
         "& .MuiTabScrollButton-root:first-child": {
             backgroundColor: '#1f2c3885',
         },
@@ -65,7 +78,7 @@ const StyledTab = withStyles((theme) => ({
       fontWeight: theme.typography.fontWeightLight,
       fontSize: theme.typography.pxToRem(16),
       marginRight: theme.spacing(1),
-      opacity: .5,
+      opacity: .6,
       transition: '.2s',
     },
   }))((props) => <Tab disableRipple {...props} />);
@@ -107,22 +120,22 @@ const  Navigation = () => {
         </StyledTabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <Tech name={'Nauka i technika'} img={img1}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+      <Tech name={'Kultura i sztuka'} img={img2}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+      <Tech name={'Przedsiębiorczośc i praca'} img={img3}/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Item Four
+      <Tech name={'Zdrowie i ekologia'} img={img4}/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Item Five
+      <Tech name={'Turystyka i rekreacja'} img={img9}/>
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Item Six
+      <Tech name={'Kanał sprzedażowy'} img={img10}/>
       </TabPanel>
     </div>
   );

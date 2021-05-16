@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-
+//darken - #10171d
 //dark - #121A21
 //violet - #22263B
 //blue btn - #1322FF
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 999
   },
   appBar: {
-    backgroundColor: '#121A21'
+    backgroundColor: '#10171d'
   },
   menuButton: {
     marginRight: theme.spacing(2),

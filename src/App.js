@@ -4,7 +4,8 @@ import Layout from './components/Layout'
 import Header from './components/Navbar/Navbar';
 import Baner from './components/Baner/Baner';
 import Navigation from './components/Navigation/Navigation';
-import ToDoList from './components/ToDoList/ToDoList.js';
+import Footer from './components/Footer';
+import ToDoList from './components/ToDoList/ToDoList';
 import './App.css';
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
      <Header/>
      <Baner/>
      <Navigation/>
+     <Footer/>
     </div>
   );
 }
