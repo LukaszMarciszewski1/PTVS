@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import logo from '../../assets/images/logo.svg'
 //darken - #10171d
 //dark - #121A21
 //violet - #22263B
@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  logo: {
+    maxHeight: 40
+  }
 }));
 
 const Navbar = () => {
@@ -37,6 +40,7 @@ const Navbar = () => {
         <AppBar position="static" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
+              {/* <img src={logo} alt="logo" className={classes.logo}/> */}
               PTVS
             </Typography>
               <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">

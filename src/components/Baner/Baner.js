@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    '@media (max-width: 1100px)' : {
+      width: '80%'
+    },
     '&::before': {
       content: '""',
       position: 'absolute',
@@ -43,10 +46,24 @@ const useStyles = makeStyles((theme) => ({
   text: {
     zIndex: 1,
     padding: 30,
-    letterSpacing: 2
+    letterSpacing: 2,
+    '@media (max-width: 550px)' : {
+      padding: 20,
+    },
+  },
+  h1: {
+    '@media (max-width: 1100px)' : {
+      fontSize: '2rem'
+    },
+    '@media (max-width: 550px)' : {
+      fontSize: '1.8rem'
+    },
   },
   p: {
-    opacity: .6
+    opacity: .6,
+    '@media (max-width: 1100px)' : {
+      fontSize: 14
+    },
   },
   playContainer: {
     display: 'flex',
@@ -54,6 +71,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexGrow: 1,
   },
+  play : {
+    fontSize: 150,
+    color: 'white',
+    '@media (max-width: 1100px)' : {
+      fontSize: 100
+    },
+    '@media (max-width: 550px)' : {
+      fontSize: 70
+    },
+  }
 }));
 
 const Baner = () => {
@@ -70,7 +97,7 @@ const Baner = () => {
         </div>
         <div className={classes.playContainer}>
           <IconButton aria-label="play arrow icon" color="primary">
-            <PlayArrowIcon style={{ fontSize: 150, color: 'white' }}/>
+            <PlayArrowIcon className={classes.play}/>
           </IconButton>
         </div>
       </div>

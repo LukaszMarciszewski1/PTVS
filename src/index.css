@@ -25,6 +25,12 @@ p {
   font-weight: lighter;
   line-height: 2rem;
   margin: 0;
+
+}
+@media screen and (max-width: 1370px) {
+ p{
+  line-height: 1.5rem;
+ } 
 }
 a{
   color: white;
