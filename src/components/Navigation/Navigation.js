@@ -89,7 +89,6 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: '100%',
   },
-
 }));
 
 const  Navigation = () => {
@@ -111,7 +110,7 @@ const  Navigation = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="transparent" elevation={3}>
+      <AppBar position="static" color="transparent" elevation={1}>
         <StyledTabs
           value={value}
           onChange={handleChange}
@@ -129,22 +128,28 @@ const  Navigation = () => {
         </StyledTabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Tech name={'Nauka i technika - '} img={img1} category={'Nauka i technika'}/>
+      Nauka i technika
+        {/* <Tech name={'Nauka i technika - '} img={img1} category={'Nauka i technika'}/> */}
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <Tech name={'Kultura i sztuka'} img={img2} category={'Kultura i sztuka'}/>
+      {/* <Tech name={'Kultura i sztuka'} img={img2} category={'Kultura i sztuka'}/> */}
+      Kultura i sztuka
       </TabPanel>
       <TabPanel value={value} index={2}>
-      <Tech name={'Przedsiębiorczośc i praca'} img={img3} category={'Przedsiębiorczośc i praca'}/>
+      {/* <Tech name={'Przedsiębiorczośc i praca'} img={img3} category={'Przedsiębiorczośc i praca'}/> */}
+      Przedsiębiorczośc i praca
       </TabPanel>
       <TabPanel value={value} index={3}>
-      <Tech name={'Zdrowie i ekologia'} img={img4} category={'Zdrowie i ekologia'}/>
+      {/* <Tech name={'Zdrowie i ekologia'} img={img4} category={'Zdrowie i ekologia'}/> */}
+      Zdrowie i ekologia
       </TabPanel>
       <TabPanel value={value} index={4}>
-      <Tech name={'Turystyka i rekreacja'} img={img9} category={'Turystyka i rekreacja'}/>
+      {/* <Tech name={'Turystyka i rekreacja'} img={img9} category={'Turystyka i rekreacja'}/> */}
+      Turystyka i rekreacja
       </TabPanel>
       <TabPanel value={value} index={5}>
-      <Tech name={'Kanał sprzedażowy'} img={img10} category={'Kanał sprzedażowy'}/>
+      {/* <Tech name={'Kanał sprzedażowy'} img={img10} category={'Kanał sprzedażowy'}/> */}
+      Kanał sprzedażowy
       </TabPanel>
     </div>
   );

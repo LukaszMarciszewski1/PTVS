@@ -12,8 +12,8 @@ function App() {
     <div className="App">
      <Header/>
      <Baner/>
-     {/* <Navigation/>
-     <Footer/> */}
+     <Navigation/>
+     <Footer/>
     </div>
   );
 }

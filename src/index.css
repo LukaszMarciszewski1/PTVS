@@ -5,6 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #121A21;
+  background-color: #18222a;
   color: white;
 }
 
@@ -16,7 +17,7 @@ h1 {
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 4px;
-  /* background-color: #202438; */
+  /* background-color: #0e141a; */
 }
 h2 {
   margin: 0;

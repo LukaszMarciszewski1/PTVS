@@ -17,6 +17,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import PlayCircleFilledRoundedIcon from '@material-ui/icons/PlayCircleFilledRounded';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import IconButton from '@material-ui/core/IconButton';
 // Import Swiper styles
 // Import Swiper styles
 import 'swiper/swiper.scss';
@@ -79,7 +81,10 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     marginLeft: '8%',
-    marginTop: '4%'
+    marginTop: '4%',
+    '@media (max-width: 1100px)' : {
+      marginLeft: '5%',
+    },
   },
   titleContent: {
     display: 'flex',
@@ -114,7 +119,7 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1500 },
     items: 4,
-    paritialVisibilityGutter: 50,
+    paritialVisibilityGutter: 40,
   },
   laptop: {
     breakpoint: { max: 1500, min: 1100 },
@@ -129,25 +134,63 @@ const responsive = {
   mobile: {
     breakpoint: { max: 550, min: 0 },
     items: 1,
-    paritialVisibilityGutter: 50
+    paritialVisibilityGutter: 70
   }
 };
+const ButtonOne = () => {
+  return ( 
+    <Button variant="outlined">
+     Link
+    </Button>
+   );
+}
+const ButtonTwo = () => {
+  return ( 
+    <Button variant="outlined" >
+    Link
+   </Button>
+   );
+}
+const ButtonThree = () => {
+  return ( 
+    <Button variant="outlined">
+    Link
+   </Button>
+   );
+}
 
-const StyledBreadcrumb = withStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.grey[100],
-    height: theme.spacing(3),
-    color: theme.palette.grey[800],
-    fontWeight: theme.typography.fontWeightRegular,
-    '&:hover, &:focus': {
-      backgroundColor: theme.palette.grey[300],
-    },
-    '&:active': {
-      boxShadow: theme.shadows[1],
-      backgroundColor: emphasize(theme.palette.grey[300], 0.12),
-    },
-  },
-}));
+const ButtonGroup = ({ next, previous, ...rest }) => {
+  const { carouselState: { currentSlide } } = rest;
+  return (
+    <div className="carousel-button-group">
+      <IconButton 
+        className={currentSlide === 0 ? "disable" : ""}
+        onClick={() => previous()}
+      >
+        <PlayArrowIcon/>
+      </IconButton>
+      <IconButton onClick={() => next()}>
+        <PlayArrowIcon/>
+      </IconButton>
+    </div>
+  );
+};
+
+// const StyledBreadcrumb = withStyles((theme) => ({
+//   root: {
+//     backgroundColor: theme.palette.grey[100],
+//     height: theme.spacing(3),
+//     color: theme.palette.grey[800],
+//     fontWeight: theme.typography.fontWeightRegular,
+//     '&:hover, &:focus': {
+//       backgroundColor: theme.palette.grey[300],
+//     },
+//     '&:active': {
+//       boxShadow: theme.shadows[1],
+//       backgroundColor: emphasize(theme.palette.grey[300], 0.12),
+//     },
+//   },
+// }));
 
 const Tech = ({name, img, category}) => {
   const classes = useStyles();
@@ -176,12 +219,13 @@ const Tech = ({name, img, category}) => {
         </Typography>
         </div>
         <Carousel
-          // draggable={true}
+          arrows={false}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           partialVisible={true}
           containerClass="carousel-container"
-          // deviceType={deviceType}
+          renderButtonGroupOutside={true}
+          customButtonGroup={<ButtonGroup />}
         >
               {data.map( card => (
                 <Card className={classes.root} key={card.id}>
