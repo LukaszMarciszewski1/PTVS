@@ -63,6 +63,9 @@ const StyledTabs = withStyles({
         "& .MuiTabScrollButton-root:last-child": {
             backgroundColor: '#1f2c3885',
         },
+        '@media (max-width: 550px)' : {
+          padding: 10,
+        },
     },
     indicator: {
         display: 'none',
@@ -80,6 +83,9 @@ const StyledTab = withStyles((theme) => ({
       marginRight: theme.spacing(1),
       opacity: .6,
       transition: '.2s',
+      '@media (max-width: 550px)' : {
+        marginRight: theme.spacing(0),
+      },
     },
   }))((props) => <Tab disableRipple {...props} />);
 
