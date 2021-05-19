@@ -55,8 +55,10 @@ function a11yProps(index) {
 }
 const StyledTabs = withStyles({
     root: {
-        padding: 20,
-        backgroundColor: '#10171d',
+        padding: '15px 20px',
+        backgroundColor: '#1b262f',
+        backgroundColor: 'rgb(33, 44, 61)',
+        backgroundColor: 'rgb(31, 41, 56)',
         "& .MuiTabScrollButton-root:first-child": {
             backgroundColor: '#1f2c3885',
         },
@@ -116,7 +118,7 @@ const  Navigation = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="transparent" elevation={1}>
+      <AppBar position="static" color="transparent" elevation={2}>
         <StyledTabs
           value={value}
           onChange={handleChange}
@@ -134,28 +136,22 @@ const  Navigation = () => {
         </StyledTabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-      Nauka i technika
-        {/* <Tech name={'Nauka i technika - '} img={img1} category={'Nauka i technika'}/> */}
+        <Tech name={'Nauka i technika - '} img={img2} category={'Nauka i technika'}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      {/* <Tech name={'Kultura i sztuka'} img={img2} category={'Kultura i sztuka'}/> */}
-      Kultura i sztuka
+        <Tech name={'Kultura i sztuka'} img={img1} category={'Kultura i sztuka'}/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      {/* <Tech name={'Przedsiębiorczośc i praca'} img={img3} category={'Przedsiębiorczośc i praca'}/> */}
-      Przedsiębiorczośc i praca
+        <Tech name={'Przedsiębiorczośc i praca'} img={img3} category={'Przedsiębiorczośc i praca'}/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      {/* <Tech name={'Zdrowie i ekologia'} img={img4} category={'Zdrowie i ekologia'}/> */}
-      Zdrowie i ekologia
+        <Tech name={'Zdrowie i ekologia'} img={img4} category={'Zdrowie i ekologia'}/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-      {/* <Tech name={'Turystyka i rekreacja'} img={img9} category={'Turystyka i rekreacja'}/> */}
-      Turystyka i rekreacja
+        <Tech name={'Turystyka i rekreacja'} img={img9} category={'Turystyka i rekreacja'}/>
       </TabPanel>
       <TabPanel value={value} index={5}>
-      {/* <Tech name={'Kanał sprzedażowy'} img={img10} category={'Kanał sprzedażowy'}/> */}
-      Kanał sprzedażowy
+        <Tech name={'Kanał sprzedażowy'} img={img10} category={'Kanał sprzedażowy'}/>
       </TabPanel>
     </div>
   );

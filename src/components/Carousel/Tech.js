@@ -2,10 +2,6 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { makeStyles, withStyles, Link } from '@material-ui/core'
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 ////////////////////////////////////////////////////
 
 import Card from '@material-ui/core/Card';
@@ -15,104 +11,122 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import PlayCircleFilledRoundedIcon from '@material-ui/icons/PlayCircleFilledRounded';
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
+
+import Avatar from '@material-ui/core/Avatar';
+import Fab from '@material-ui/core/Fab';
+import CheckIcon from '@material-ui/icons/Check';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import IconButton from '@material-ui/core/IconButton';
-// Import Swiper styles
-// Import Swiper styles
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
+import { blue } from '@material-ui/core/colors';
+import CardCarousel from './CardCarousel'
 
-const data = [
-  {
-    id: 0,
-    name: 'Lukasz',
-    text: 'Lorem Ipsum - dolor text'
-  },
-  {
-    id: 1,
-    name: 'Marek',
-    text: 'Lorem Ipsum - dolor text'
-  },
-  {
-    id: 2,
-    name: 'Kasztan',
-    text: 'Lorem Ipsum - dolor text'
-  },
-  {
-    id: 3,
-    name: 'Wojtek',
-    text: 'Lorem Ipsum - dolor text'
-  },  
-  {
-    id: 4,
-    name: 'Marta',
-    text: 'Lorem Ipsum - dolor text'
-  },
-  {
-    id: 5,
-    name: 'Marta',
-    text: 'Lorem Ipsum - dolor text'
-  },
-  {
-    id: 6,
-    name: 'Marta',
-    text: 'Lorem Ipsum - dolor text'
-  },
-]
-
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  card: {
     color: 'white',
     margin: 10,
-    backgroundColor: '#202438'
+    backgroundColor: '#272b44',
+    backgroundColor: 'rgb(31, 41, 56)',
   },
   media: {
     height: 200,
-  },
-  swiper: {
-    marginTop: 60,
-    maxWidth: '90%',
+    '@media (max-width: 550px)' : {
+      height: 150,
+    },
   },
   container: {
-    marginLeft: '8%',
+    marginLeft: '9%',
     marginTop: '4%',
     '@media (max-width: 1100px)' : {
       marginLeft: '5%',
+    },
+    '@media (max-width: 550px)' : {
+      marginTop: '10%',
+      marginLeft: '3%',
     },
   },
   titleContent: {
     display: 'flex',
     opacity: .8,
     alignItems: 'flex-end',
-    margin: 15
+    margin: 15,
+    maxWidth: 700,
+    '@media (max-width: 1100px)' : {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justyContent: 'flex-end',
+      margin: 10
+    },
   },
   titleText: {
     margin: '0 20px',
+    '@media (max-width: 1100px)' : {
+      margin: '15px 0 0',
+    },
   },
   cardContent: {
     marginBottom: 30,
-    position: 'relative'
+    position: 'relative',
+    '@media (max-width: 550px)' : {
+      marginBottom: 10,
+    },
   },
   titleCategory: {
     fontSize: 13,
     fontWeight: 'lighter',
     letterSpacing: 1
   },
-  iconPlay: {
+  avatar: {
     position: 'absolute',
     top: -25,
     right: 25,
     width: 60,
     height: 60,
-    // color: '#2962ff',
-    color: 'white',
+    backgroundColor: blue[900],
+    '&:hover' : {
+      backgroundColor: blue[600],
+    },
   },
+  cardBottomBar: {
+    padding: '10px 16px',
+    opacity: .5
+  },
+  goToButton : {
+    // backgroundColor: 'rgb(33, 44, 61)',
+    padding: '8px 20px',
+    // border: '1px solid grey'
+  },
+
+  //carousel
+  carouselContainer: {
+    position: 'relative',
+    '@media (max-width: 550px)' : {
+      marginTop: 70
+    },
+  },
+  carouselButtonGroup: {
+    position: 'absolute',
+    top: -50,
+    right: 0,
+    '@media (max-width: 550px)' : {
+      left: 10,
+    },
+  },
+  carouselButton: {
+    backgroundColor: 'rgb(33, 44, 61)',
+    marginRight: 20,
+    '@media (max-width: 1100px)' : {
+      marginRight: 10,
+    },
+    "&:disabled" : {
+      opacity: .4,
+      color: 'inherit',
+      backgroundColor: 'rgb(33, 44, 61)',
+    }
+  },
+
 }));
 
 const responsive = {
@@ -134,65 +148,37 @@ const responsive = {
   mobile: {
     breakpoint: { max: 550, min: 0 },
     items: 1,
-    paritialVisibilityGutter: 70
+    paritialVisibilityGutter: 40
   }
 };
-const ButtonOne = () => {
-  return ( 
-    <Button variant="outlined">
-     Link
-    </Button>
-   );
-}
-const ButtonTwo = () => {
-  return ( 
-    <Button variant="outlined" >
-    Link
-   </Button>
-   );
-}
-const ButtonThree = () => {
-  return ( 
-    <Button variant="outlined">
-    Link
-   </Button>
-   );
-}
 
 const ButtonGroup = ({ next, previous, ...rest }) => {
-  const { carouselState: { currentSlide } } = rest;
+  const classes = useStyles();
+  const { carouselState: { currentSlide, totalItems, slidesToShow } } = rest;
   return (
-    <div className="carousel-button-group">
-      <IconButton 
-        className={currentSlide === 0 ? "disable" : ""}
+    <div className={classes.carouselButtonGroup}>
+      <Button 
+        variant="contained" 
+        color="primary"
+        className={classes.carouselButton}
+        disabled ={ currentSlide === 0 ? true : false}
         onClick={() => previous()}
       >
-        <PlayArrowIcon/>
-      </IconButton>
-      <IconButton onClick={() => next()}>
-        <PlayArrowIcon/>
-      </IconButton>
+        <KeyboardArrowLeftIcon/>
+      </Button>
+      <Button 
+        className={classes.carouselButton}
+        disabled ={ currentSlide === totalItems - slidesToShow ? true : false}
+        variant="contained" 
+        color="primary"
+        onClick={() => next()}>
+        <KeyboardArrowRightIcon/>
+      </Button>
     </div>
   );
 };
 
-// const StyledBreadcrumb = withStyles((theme) => ({
-//   root: {
-//     backgroundColor: theme.palette.grey[100],
-//     height: theme.spacing(3),
-//     color: theme.palette.grey[800],
-//     fontWeight: theme.typography.fontWeightRegular,
-//     '&:hover, &:focus': {
-//       backgroundColor: theme.palette.grey[300],
-//     },
-//     '&:active': {
-//       boxShadow: theme.shadows[1],
-//       backgroundColor: emphasize(theme.palette.grey[300], 0.12),
-//     },
-//   },
-// }));
-
-const Tech = ({name, img, category}) => {
+const Tech = ({data, category}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -202,63 +188,44 @@ const Tech = ({name, img, category}) => {
     return ( 
       <div className={classes.container}>
         <div className={classes.titleContent}>
-        <Button 
-          component='a'
-          href="#"
-          variant="outlined" 
-          color="inherit"
-          endIcon={<ChevronRightIcon/>}
+          <Button 
+            component='a'
+            href="#"
+            variant="outlined" 
+            color="inherit"
+            className={classes.goToButton}
+            endIcon={<KeyboardArrowRightIcon/>}
           >
-          Przejdź
-        </Button>
-        <Typography variant="h6" component="h2" className={classes.titleText}>
-          {name}
-        </Typography>
-        <Typography variant="subtitle1" style={{fontWeight:'lighter', opacity: .7}}>
-          lorem ipsum dolor text
-        </Typography>
+            Przejdź
+          </Button>
+          <Typography variant="h6" component="h2" className={classes.titleText}>
+            {category}
+          </Typography>
+          <Typography variant="subtitle1" style={{fontWeight:'lighter', opacity: .7}}>
+            lorem ipsum dolor text example
+          </Typography>
         </div>
+        <div className={classes.carouselContainer}>
         <Carousel
           arrows={false}
           responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
+          ssr={true}
           partialVisible={true}
-          containerClass="carousel-container"
           renderButtonGroupOutside={true}
-          customButtonGroup={<ButtonGroup />}
+          customButtonGroup={<ButtonGroup/>}
         >
               {data.map( card => (
-                <Card className={classes.root} key={card.id}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image={img}
-                      title="Contemplative Reptile"
-                    />
-                    <CardContent className={classes.cardContent}>
-                    <PlayCircleFilledRoundedIcon className={classes.iconPlay} fontSize='large'/>
-                    <Typography className={classes.titleCategory} gutterBottom style={{opacity: .5}}>
-                       {category}
-                    </Typography>
-                      <Typography gutterBottom variant="h6" component="h3" color="inherit">
-                        Lizard
-                      </Typography>
-                      <Typography variant="body2" component="p" style={{opacity: .5}}>
-                        Lizards are a widespread group of squamate 
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Share
-                    </Button>
-                    <Button size="small" color="primary">
-                      Learn More
-                    </Button>
-                  </CardActions>
-                </Card>
+                <CardCarousel 
+                 key={card.id}
+                 category={card.category}
+                 title={card.title}
+                 description={card.description}
+                 time={card.time}
+                 img={card.img}
+                 />
           ))}
         </Carousel>
+        </div>
       </div>
      );
 }

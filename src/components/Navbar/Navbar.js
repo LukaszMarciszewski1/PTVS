@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 999
   },
   appBar: {
-    backgroundColor: '#10171d'
+    backgroundColor: '#10171d',
+    backgroundColor: '#121a21',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -37,7 +38,7 @@ const Navbar = () => {
     const classes = useStyles();
     return ( 
         <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar}>
+        <AppBar position="static" className={classes.appBar} elevation={2}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
               {/* <img src={logo} alt="logo" className={classes.logo}/> */}

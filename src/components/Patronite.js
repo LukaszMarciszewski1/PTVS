@@ -5,16 +5,17 @@ import { makeStyles, Avatar, Card, TextField, CardHeader, CardContent, Button} f
 const useStyles = makeStyles({
     footer: {
          width: '100%',
-         minHeight: 300,
-         backgroundColor: '#10171d',
+         minHeight: 100,
+         backgroundColor: 'rgb(33, 44, 61)',
+         marginTop: 200
     },
   })
 
-const Footer = () => {
+const Patronite = () => {
     const classes = useStyles();
     return ( 
         <div className={classes.footer}></div>
      );
 }
  
-export default Footer;
+export default Patronite;

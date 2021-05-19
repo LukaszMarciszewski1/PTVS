@@ -5,7 +5,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #121A21;
-  background-color: #18222a;
+  background-color: #1b262f;
+  background-color: #121a21;
   color: white;
 }
 
@@ -18,6 +19,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 4px;
   /* background-color: #0e141a; */
+  /* background-color: rgb(31, 41, 56); */
 }
 h2 {
   margin: 0;
@@ -37,7 +39,6 @@ a{
   color: white;
   text-decoration: none;
 }
-
 .MuiSvgIcon-fontSizeSmall{
   font-size: 3rem;
 }
