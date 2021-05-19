@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from '../../assets/images/logo.svg'
+import { Link } from 'react-router-dom';
 //darken - #10171d
 //dark - #121A21
 //violet - #22263B
@@ -17,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     position: 'fixed',
     width: '100%',
-    zIndex: 999
+    zIndex: 999,
+    top: 0
   },
   appBar: {
     backgroundColor: '#10171d',
@@ -37,19 +39,22 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
     const classes = useStyles();
     return ( 
-        <div className={classes.root}>
-        <AppBar position="static" className={classes.appBar} elevation={2}>
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              {/* <img src={logo} alt="logo" className={classes.logo}/> */}
-              PTVS
-            </Typography>
-              <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <div className={classes.root}>
+          <AppBar position="static" className={classes.appBar} elevation={2}>
+            <Toolbar>
+                {/* <img src={logo} alt="logo" className={classes.logo}/> */}
+                
+                  <Typography variant="h6" className={classes.title}>
+                    <Link to="/">
+                      PTVS
+                    </Link>
+                  </Typography>
+                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                  <MenuIcon />
+                </IconButton>
+            </Toolbar>
+          </AppBar>
+          </div>
      );
 }
  

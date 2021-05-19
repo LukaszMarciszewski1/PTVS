@@ -6,7 +6,8 @@ import Tab from '@material-ui/core/Tab';
 import Tech from '../components/Carousel/Tech'
 import TabContent from '../components/Tabs/TabPanelContainer'
 import data from '../data'
-
+import {Link} from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router';
 //style nav container
 const StyledTabs = withStyles({
     root: {
@@ -55,10 +56,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const  TabsCategory = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
+  // const history = useHistory()
+  // const location = useLocation()
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -90,25 +93,25 @@ const  TabsCategory = () => {
         </StyledTabs>
       </AppBar>
        <TabContent value={value} index={0}>
-         <Tech category={'Nauka i technika'} data={data.ScienceAndTechnology}/>
+         <Tech category={'Nauka i technika'} data={data.ScienceAndTechnology} link={'/Nauka-i-technika'}/>
        </TabContent>
        <TabContent value={value} index={1}>
-         <Tech category={'Kultura i sztuka'} data={data.CultureAndArt}/>
+         <Tech category={'Kultura i sztuka'} data={data.CultureAndArt} link={'/Kultura-i-sztuka'}/>
        </TabContent>
        <TabContent value={value} index={2}>
-          <Tech category={'Przedsiębiorczośc i praca'} data={data.EntrepreneurshipAndWork}/>
+          <Tech category={'Przedsiębiorczośc i praca'} data={data.EntrepreneurshipAndWork} link={'/Przedsiębiorczośc-i-praca'}/>
        </TabContent>
        <TabContent value={value} index={3}>
-         <Tech category={'Zdrowie i ekologia'} data={data.HealthAndEcology}/>
+         <Tech category={'Zdrowie i ekologia'} data={data.HealthAndEcology} link={'/Zdrowie-i-ekologia'}/>
        </TabContent>
        <TabContent value={value} index={4}>
-         <Tech category={'Turystyka i rekreacja'} data={data.TourismAndRecreation}/>
+         <Tech category={'Turystyka i rekreacja'} data={data.TourismAndRecreation} link={'/Turystyka-i-rekreacja'}/>
        </TabContent>
        <TabContent value={value} index={5}>
-         <Tech category={'Kanał sprzedażowy'} data={data.SalesChannel}/>
+         <Tech category={'Kanał sprzedażowy'} data={data.SalesChannel} link={'/Kanał-sprzedażowy'}/>
        </TabContent>
     </div>
   );
 }
- 
+
 export default TabsCategory;

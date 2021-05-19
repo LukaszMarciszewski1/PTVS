@@ -5,9 +5,9 @@ import { makeStyles, Avatar, Card, TextField, CardHeader, CardContent, Button} f
 const useStyles = makeStyles({
     footer: {
          width: '100%',
-         minHeight: 100,
+         minHeight: 90,
          backgroundColor: 'rgb(33, 44, 61)',
-         marginTop: 200
+         marginTop: 170
     },
   })
 

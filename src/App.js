@@ -1,22 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Layout from './components/Layout'
-import Header from './components/Navbar/Navbar';
-import Baner from './components/Baner/Baner';
-import TabsCategory from './Layouts/TabsCategory';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar/Navbar';
 import Patronite from './components/Patronite';
-import ToDoList from './components/ToDoList/ToDoList';
+import Page from './Pages/Page';
 import './App.css';
 function App() {
   return (
-    <div className="App">
-     <Header/>
-     <Baner/>
-     <TabsCategory/>
-     <Patronite/>
-     <Footer/>
+    <Router>
+    <div className="app">
+      <nav>
+        {<Navbar />}
+      </nav>
+      <main>
+        <section >
+          {<Page />}
+        </section>
+        <section>
+          {<Patronite />}
+        </section>
+      </main>
+      <footer>{<Footer />}</footer>
     </div>
+  </Router>
   );
 }
 

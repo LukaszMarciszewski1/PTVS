@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { makeStyles, withStyles, Link } from '@material-ui/core'
+import { makeStyles, withStyles } from '@material-ui/core'
 ////////////////////////////////////////////////////
 
 import Card from '@material-ui/core/Card';
@@ -21,7 +21,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import { blue } from '@material-ui/core/colors';
 import CardCarousel from './CardCarousel'
-
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -94,9 +94,11 @@ const useStyles = makeStyles((theme) => ({
     opacity: .5
   },
   goToButton : {
-    // backgroundColor: 'rgb(33, 44, 61)',
-    padding: '8px 20px',
-    // border: '1px solid grey'
+    padding: '8px 25px',
+    border: '1px solid grey',
+    display: 'flex',
+    alignItems: 'center',
+    borderRadius: 5
   },
 
   //carousel
@@ -178,7 +180,9 @@ const ButtonGroup = ({ next, previous, ...rest }) => {
   );
 };
 
-const Tech = ({data, category}) => {
+
+
+const Tech = ({data, category, link}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -188,16 +192,10 @@ const Tech = ({data, category}) => {
     return ( 
       <div className={classes.container}>
         <div className={classes.titleContent}>
-          <Button 
-            component='a'
-            href="#"
-            variant="outlined" 
-            color="inherit"
-            className={classes.goToButton}
-            endIcon={<KeyboardArrowRightIcon/>}
-          >
+          <Link to={link} className={classes.goToButton}>
             Przejdź
-          </Button>
+            <KeyboardArrowRightIcon style={{paddingLeft: "10px"}}/>
+          </Link>
           <Typography variant="h6" component="h2" className={classes.titleText}>
             {category}
           </Typography>

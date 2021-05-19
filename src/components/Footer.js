@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     footer: {
          width: '100%',
          minHeight: 300,
-         backgroundColor: '#10171d',
+         backgroundColor: 'black',
     },
   })
 

@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     height: '350px',
     overflow: 'hidden',
-    paddingTop: '60px',
     display: 'flex',
+    marginTop: 60,
   },
   img: {
     position: 'absolute',
