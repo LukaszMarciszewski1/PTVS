@@ -1,9 +1,10 @@
 import React from 'react';
-import { makeStyles, Link, Paper, Typography, Avatar, Card, TextField, CardHeader, CardContent, Button} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import IconButton from '@material-ui/core/IconButton';
-//images
-import img from '../../assets/images/banner.jpg'
+import { Link } from 'react-router-dom';
+// import img from '/images/banner.jpg'
+// import data from '../data'
 const useStyles = makeStyles((theme) => ({
   banner: {
     position: 'relative',
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     height: '350px',
     overflow: 'hidden',
     display: 'flex',
-    marginTop: 60,
+    marginTop: 78,
   },
   img: {
     position: 'absolute',
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   h1: {
+    marginTop: 0,
     '@media (max-width: 1100px)' : {
       fontSize: '2rem'
     },
@@ -83,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Baner = () => {
+const Baner = ({img, newVideo}) => {
     const classes = useStyles();
     return ( 
       <div className={classes.banner}> 
@@ -96,9 +98,11 @@ const Baner = () => {
           </div>
         </div>
         <div className={classes.playContainer}>
-          <IconButton aria-label="play arrow icon" color="primary">
-            <PlayArrowIcon className={classes.play}/>
-          </IconButton>
+          <Link to={newVideo} >  
+            <IconButton aria-label="play arrow icon" color="primary">
+              <PlayArrowIcon className={classes.play}/>
+            </IconButton>
+          </Link>
         </div>
       </div>
      );

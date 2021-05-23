@@ -1,410 +1,437 @@
-import img1 from './assets/images/pic01.jpg'
-import img2 from './assets/images/pic02.jpg'
-import img3 from './assets/images/pic03.jpg'
-import img4 from './assets/images/pic04.jpg'
-import img5 from './assets/images/pic05.jpg'
-import img6 from './assets/images/pic06.jpg'
-import img7 from './assets/images/pic08.jpg'
-import img8 from './assets/images/pic09.jpg'
-import img9 from './assets/images/pic10.jpg'
-import img10 from './assets/images/pic11.jpg'
-   const cards = {
-    ScienceAndTechnology :[
+
+   const cards = [
       {
-        title: "Tehnika",
+        title: "Tehnika 1",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img2,
+        img: '/images/pic01.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 1
       },
       {
-        title: "Tehnika",
+        title: "Tehnika 2",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img1,
+        img: '/images/pic02.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 2
       },
       {
-        title: "Tehnika",
+        title: "Tehnika 3",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img2,
+        img: '/images/pic03.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 3
       },
       {
-        title: "Tehnika",
+        title: "Tehnika 4",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img4,
+        img: '/images/pic04.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 4
       },
       {
-        title: "Tehnika",
+        title: "Tehnika5",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img10,
+        img: '/images/pic05.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 5
       },
       {
-        title: "Tehnika",
+        title: "Tehnika 6",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img6,
+        img: '/images/pic06.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 6
       },
       {
-        title: "Tehnika",
+        title: "Tehnika 7",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img7,
+        img: '/images/pic08.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 7
       },
       {
-        title: "Tehnika",
+        title: "Tehnika 8",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Nauka i Tehnika",
-        img: img8,
+        img: '/images/pic09.jpg',
+        move: '/video/SpotPTVS2.mp4',
         id: 8
       },
-    ],
-     CultureAndArt :[
       {
-        title: "Kultura",
+        title: "Kultura 8",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img2,
-        id: 1
+        img: '/images/pic10.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 9
       },
       {
-        title: "Kultura",
+        title: "Kultura 9",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img1,
-        id: 2
+        img: '/images/pic11.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 10
       },
       {
-        title: "Kultura",
+        title: "Kultura 10",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img1,
-        id: 3
+        img: '/images/pic01.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 11
       },
       {
-        title: "Kultura",
+        title: "Kultura 11",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img2,
-        id: 4
+        img: '/images/pic02.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 12
       },
       {
-        title: "Kultura",
+        title: "Kultura 12",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img2,
-        id: 5
+        img: '/images/pic03.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 13
       },
       {
-        title: "Kultura",
+        title: "Kultura 13",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img6,
-        id: 6
+        img: '/images/pic04.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 14
       },
       {
-        title: "Kultura",
+        title: "Kultura 14",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img7,
-        id: 7
+        img: '/images/pic05.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 15
       },
       {
-        title: "Kultura",
+        title: "Kultura 15",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kultura i sztuka",
-        img: img8,
-        id: 8
+        img: '/images/pic06.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 16
       },
-    ],
-    EntrepreneurshipAndWork :[
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 16",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img2,
-        id: 1
+        img: '/images/pic08.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 17
       },
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 17",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img1,
-        id: 2
+        img: '/images/pic09.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 18
       },
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 18",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img3,
-        id: 3
+        img: '/images/pic10.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 19
       },
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 19",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img4,
-        id: 4
+        img: '/images/pic11.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 20
       },
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 20",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img5,
-        id: 5
+        img: '/images/pic01.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 21
       },
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 21",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img6,
-        id: 6
+        img: '/images/pic02.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 22
       },
       {
-        title: "Przedsiębiorczość",
+        title: "Przedsiębiorczość 22",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img7,
-        id: 7
+        img: '/images/pic03.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 23
       },
       {
-        title: "Kack",
+        title: "Przedsiębiorczość 23",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Przedsiębiorczość i praca",
-        img: img8,
-        id: 8
+        img: '/images/pic04.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 24
       },
-    ],
-    HealthAndEcology :[
       {
-        title: "Zdrowie",
+        title: "Zdrowie 24",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img2,
-        id: 1
+        img: '/images/pic05.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 25
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 25",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img1,
-        id: 2
+        img: '/images/pic06.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 26
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 26",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img3,
-        id: 3
+        img: '/images/pic08.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 27
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 27",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img4,
-        id: 4
+        img: '/images/pic09.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 28
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 28",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img5,
-        id: 5
+        img: '/images/pic10.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 29
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 29",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img6,
-        id: 6
+        img: '/images/pic11.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 30
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 30",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img7,
-        id: 7
+        img: '/images/pic01.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 31
       },
       {
-        title: "Zdrowie",
+        title: "Zdrowie 31",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Zdrowie i ekologia",
-        img: img8,
-        id: 8
+        img: '/images/pic02.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 32
       },
-    ],
-    TourismAndRecreation :[
       {
-        title: "Turystyka",
+        title: "Turystyka 32",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img2,
-        id: 1
+        img: '/images/pic03.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 33
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 33",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img1,
-        id: 2
+        img: '/images/pic04.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 34
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 34",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img3,
-        id: 3
+        img: '/images/pic05.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 35
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 35",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img4,
-        id: 4
+        img: '/images/pic06.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 36
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 36",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img5,
-        id: 5
+        img: '/images/pic08.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 37
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 37",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img6,
-        id: 6
+        img: '/images/pic09.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 38
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 38",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img7,
-        id: 7
+        img: '/images/pic10.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 39
       },
       {
-        title: "Turystyka",
+        title: "Turystyka 39",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Turystyka i rekreacja",
-        img: img8,
-        id: 8
+        img: '/images/pic11.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 40
       },
-    ],
-    SalesChannel :[
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 40",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img2,
-        id: 1
+        img: '/images/pic01.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 41
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 41",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img1,
-        id: 2
+        img: '/images/pic02.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 42
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 42",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img3,
-        id: 3
+        img: '/images/pic03.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 43
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 43",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img4,
-        id: 4
+        img: '/images/pic04.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 44
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 44",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img3,
-        id: 5
+        img: '/images/pic05.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 45
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 45",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img2,
-        id: 6
+        img: '/images/pic06.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 46
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 46",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img6,
-        id: 7
+        img: '/images/pic06.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 47
       },
       {
-        title: "Sprzedaż",
+        title: "Sprzedaż 47 najnowsze",
         description: "lorem ipsum dolor",
         time: "15:22:21",
         category: "Kanał sprzedażowy",
-        img: img8,
-        id: 8
+        img: '/images/pic08.jpg',
+        move: '/video/SpotPTVS2.mp4',
+        id: 48
       },
-    ],
-  }
+]
 
 export default cards

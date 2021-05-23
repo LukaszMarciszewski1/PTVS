@@ -5,8 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import logo from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom';
+// import logo from '/logo.svg';
 //darken - #10171d
 //dark - #121A21
 //violet - #22263B
@@ -19,20 +19,33 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     width: '100%',
     zIndex: 999,
-    top: 0
+    top: 0,
+    marginBottom: 80
   },
   appBar: {
-    backgroundColor: '#10171d',
     backgroundColor: '#121a21',
+    backgroundColor: '#10161d',
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    fontSize: 30
   },
-  title: {
-    flexGrow: 1,
+  menuIcon: {
+   fontSize: 35
   },
   logo: {
-    maxHeight: 40
+    maxHeight: 50
+  },
+  logoContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  toolBar:{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    minHeight: 80
+
   }
 }));
 
@@ -41,16 +54,12 @@ const Navbar = () => {
     return ( 
       <div className={classes.root}>
           <AppBar position="static" className={classes.appBar} elevation={2}>
-            <Toolbar>
-                {/* <img src={logo} alt="logo" className={classes.logo}/> */}
-                
-                  <Typography variant="h6" className={classes.title}>
-                    <Link to="/">
-                      PTVS
+            <Toolbar className={classes.toolBar}>
+                    <Link to="/" className={classes.logoContainer}>
+                      <img src='/logo.svg' alt="logo" className={classes.logo}/>
                     </Link>
-                  </Typography>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                  <MenuIcon />
+                  <MenuIcon className={classes.menuIcon}/>
                 </IconButton>
             </Toolbar>
           </AppBar>
