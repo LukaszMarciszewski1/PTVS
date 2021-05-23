@@ -12,7 +12,7 @@ import CultureAndArt from './screens/CultureAndArt';
 import HealthAndEcology from './screens/HealthAndEcology';
 import EntrepreneurshipAndWork from './screens/EntrepreneurshipAndWork';
 import ScrollToTop from './hooks/ScrollToTop'
-//sddsad
+
 function App() {
   return (
     <Router>
@@ -37,21 +37,3 @@ function App() {
 }
 
 export default App;
-
-{/* <Router>
-<div>
- <NavBar/>
- <main>
-    <Route path="/video/:id" component={VideoScreen}></Route>
-    <Route path="/" component={HomeScreen} exact></Route>
-    <Route path="/chenel/:category" component={ChanelScreen}></Route>
-    <Route path="/Kanal-sprzedazowy" component={SalesChanel}></Route>
-    <Route path="/Turystyka-i-rekreacja" component={TourismAndRecreation}></Route>
-    <Route path="/Nauka-i-Tehnika" component={ScienceAndTechnology}></Route>
-    <Route path="/Kultura-i-sztuka" component={CultureAndArt}></Route>
-    <Route path="/Zdrowie-i-ekologia" component={HealthAndEcology}></Route>
-    <Route path="/Przedsiebiorczosc-i-praca" component={EntrepreneurshipAndWork}></Route>
- </main>
- <Footer/>
-</div>
-</Router> */}
