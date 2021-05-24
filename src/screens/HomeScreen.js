@@ -1,5 +1,5 @@
-import React from 'react';
-// import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -9,7 +9,7 @@ import Baner from '../components/Baner/Baner'
 // import img from '/images/banner.jpg'
 // import Video from '../components/Video/Video';
 import Carousel from '../components/Carousel/Carousel';
-import data from '../data'
+// import data from '../data'
 
 
 const StyledTabs = withStyles({
@@ -90,20 +90,25 @@ const HomePage = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
-  // const [cards, setCards] = useState([])
-  // useEffect(() => {
-  // const fetchData = async () => {
-  //   const { data } = await axios.get('/api/videos');
-  //   setCards(data)
+  const [videos, setVideos] = useState([])
+  const [error, setError] = useState(false)
 
-  // };
-  // fetchData()
-  // }, [])
-  // const newVideo = [...data.pop()];
+  useEffect(()=>{
+    const fetchData = async () => {
+      try {
+        const { data }  = await axios.get('/api/videos')
+        setVideos(data)
+      } catch (err) {
+        // setError(err.massage)
+        console.log(err)
+      }
+    };
+    fetchData()
+  }, [])
+
   return ( 
     <div>
-      <Baner img={'/images/banner.jpg'} newVideo={`/video/${data.length}`}/>
+      <Baner img={'/images/banner.jpg'} newVideo={`/video/${videos.length}`}/>
       <AppBar position="static" color="transparent" elevation={2}>
         <StyledTabs
           value={value}
@@ -125,42 +130,42 @@ const HomePage = () => {
         <Carousel
           toCategory={'/Nauka-i-Tehnika'}
           category={'Nauka i Tehnika'}
-          data = {data}
+          data = {videos}
         />
       </TabPanel>
       <TabPanel index={1} value={value}>
         <Carousel
           toCategory={'/Kultura-i-sztuka'}
           category={'Kultura i sztuka'}
-          data = {data}
+          data = {videos}
         />
       </TabPanel>
       <TabPanel index={2} value={value}>
         <Carousel
           toCategory={'/Przedsiebiorczosc-i-praca'}
           category={'Przedsiębiorczość i praca'}
-          data = {data}
+          data = {videos}
         />
       </TabPanel>
       <TabPanel index={3} value={value}>
         <Carousel
           toCategory={'/Zdrowie-i-ekologia'}
           category={'Zdrowie i ekologia'}
-          data = {data}
+          data = {videos}
         />
       </TabPanel>
       <TabPanel index={4} value={value}>
         <Carousel
           toCategory={'/Turystyka-i-rekreacja'}
           category={'Turystyka i rekreacja'}
-          data = {data}
+          data = {videos}
         />
       </TabPanel>
       <TabPanel index={5} value={value}>
         <Carousel
           toCategory={'/Kanal-sprzedazowy'}
           category={'Kanał sprzedażowy'}
-          data = {data}
+          data = {videos}
         />
       </TabPanel>
     </div>
