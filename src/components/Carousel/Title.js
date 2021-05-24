@@ -1,6 +1,6 @@
 import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
-import { makeStyles, withStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';

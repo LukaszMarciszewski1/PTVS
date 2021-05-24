@@ -1,9 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { makeStyles, withStyles } from '@material-ui/core'
-import { Link } from 'react-router-dom';
-// import CardCarousel from './CardCarousel'
+import { makeStyles } from '@material-ui/core'
 import ButtonsGroup from './ButtonsGroup'
 import Title from './Title'
 import Video from '../Video/Video';

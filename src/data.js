@@ -15,7 +15,7 @@
         time: "15:22:21",
         category: "Nauka i Tehnika",
         img: '/images/pic02.jpg',
-        move: '/video/SpotPTVS2.mp4',
+        move: '/video/Spot-PTVS-v1.0.mp4',
         id: 2
       },
       {

@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import axios from 'axios'
+import React from 'react';
+// import axios from 'axios'
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import TabPanel from '../components/TabPanel/TabPanel'
 import Baner from '../components/Baner/Baner'
 // import img from '/images/banner.jpg'
-import Video from '../components/Video/Video';
+// import Video from '../components/Video/Video';
 import Carousel from '../components/Carousel/Carousel';
 import data from '../data'
 

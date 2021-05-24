@@ -1,8 +1,8 @@
-import React from 'react'
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-
-
+import 'plyr/dist/plyr.css'
+import ReactPlayer from 'react-player'
 const useStyles = makeStyles((theme) => ({
     container: {
        width: '100%',
@@ -28,16 +28,21 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
 const ActiveVideo = (props) => {
   const classes = useStyles()
   const { video } = props
+
   return ( 
     <div className={classes.container}>
       <div className={classes.video}>
-        <video controls className={classes.img}>
-          <source src={video.move} type='video/mp4'/>
-        </video>
-        {/* <img src={video.img} alt={'video'} className={classes.img}/> */}
+        <ReactPlayer
+          className='react-player'
+          url={video.move}
+          width='100%'
+          height='100%'
+          controls={true}
+        />
       </div>
       <div className={classes.description}>
       <Typography gutterBottom variant="h5" component="h3">
@@ -55,3 +60,44 @@ const ActiveVideo = (props) => {
 }
  
 export default ActiveVideo;
+
+
+
+
+
+
+
+// const ActiveVideo = (props) => {
+//   const classes = useStyles()
+//   const { video } = props
+
+//   const loadSource = () => {
+
+//   }
+
+//   const [selectVideo, setSelectVideo] = useState('');
+
+//   return ( 
+//     <div className={classes.container}>
+//       <div className={classes.video}>
+//         <video controls className={classes.img}>
+//           <source src={video.move} type='video/mp4'/>
+//         </video>
+//         {/* <img src={video.img} alt={'video'} className={classes.img}/> */}
+//       </div>
+//       <div className={classes.description}>
+//       <Typography gutterBottom variant="h5" component="h3">
+//         {video.title}
+//       </Typography>
+//       <Typography variant="body2" gutterBottom>
+//         {video.description}
+//       </Typography>
+//       <Typography variant="body2">
+//         {video.time}
+//       </Typography>
+//       </div>
+//     </div>
+//   );
+// }
+ 
+// export default ActiveVideo;
