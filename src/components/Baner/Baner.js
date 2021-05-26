@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
   },
   h1: {
     marginTop: 0,
-    marginBottom: 20,
     '@media (max-width: 1100px)' : {
       fontSize: '2rem'
     },
