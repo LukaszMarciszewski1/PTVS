@@ -5,12 +5,12 @@ import Footer from './components/Footer/Footer';
 import HomeScreen from './screens/HomeScreen';
 import VideoScreen from './screens/VideoScreen';
 import ChanelScreen from './screens/ChanelScreen';
-import SalesChanel from './screens/SalesChanel';
-import TourismAndRecreation from './screens/TourismAndRecreation';
-import ScienceAndTechnology from './screens/ScienceAndTechnology';
-import CultureAndArt from './screens/CultureAndArt';
-import HealthAndEcology from './screens/HealthAndEcology';
-import EntrepreneurshipAndWork from './screens/EntrepreneurshipAndWork';
+import SalesChanel from './screens/chanels/SalesChanel';
+import TourismAndRecreation from './screens/chanels/TourismAndRecreation';
+import ScienceAndTechnology from './screens/chanels/ScienceAndTechnology';
+import CultureAndArt from './screens/chanels/CultureAndArt';
+import HealthAndEcology from './screens/chanels/HealthAndEcology';
+import EntrepreneurshipAndWork from './screens/chanels/EntrepreneurshipAndWork';
 import ScrollToTop from './hooks/ScrollToTop'
 //sss
 function App() {
@@ -20,15 +20,32 @@ function App() {
       <ScrollToTop />
        <NavBar/>
        <main>
-          <Route path="/video/:id" component={VideoScreen}></Route>
-          <Route path="/" component={HomeScreen} exact></Route>
-          <Route path="/chenel/:category" component={ChanelScreen}></Route>
-          <Route path="/Kanal-sprzedazowy" component={SalesChanel}></Route>
-          <Route path="/Turystyka-i-rekreacja" component={TourismAndRecreation}></Route>
-          <Route path="/Nauka-i-Tehnika" component={ScienceAndTechnology}></Route>
-          <Route path="/Kultura-i-sztuka" component={CultureAndArt}></Route>
-          <Route path="/Zdrowie-i-ekologia" component={HealthAndEcology}></Route>
-          <Route path="/Przedsiebiorczosc-i-praca" component={EntrepreneurshipAndWork}></Route>
+        <Switch>
+            <Route path="/video/:id" component={VideoScreen}></Route>
+            <Route path="/" component={HomeScreen} exact></Route>
+            <ChanelScreen>
+              <Switch>
+                <Route path="/Nauka-i-Technika">
+                  <ScienceAndTechnology />
+                </Route>
+                <Route path="/Kultura-i-sztuka">
+                  <CultureAndArt />
+                </Route>
+                <Route path="/Przedsiebiorczosc-i-praca">
+                  <EntrepreneurshipAndWork />
+                </Route>
+                <Route path="/Zdrowie-i-ekologia">
+                  <HealthAndEcology />
+                </Route>
+                <Route path="/Turystyka-i-rekreacja">
+                  <TourismAndRecreation />
+                </Route>
+                <Route path="/Kanal-sprzedazowy">
+                  <SalesChanel />
+                </Route>
+              </Switch>
+            </ChanelScreen>
+        </Switch>
        </main>
        <Footer/>
       </div>

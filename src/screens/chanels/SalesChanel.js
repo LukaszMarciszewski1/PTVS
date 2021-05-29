@@ -1,18 +1,18 @@
 import React from 'react';
-import 'react-multi-carousel/lib/styles.css';
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Video from '../components/Video/Video'
-import data from '../data'
+import Video from '../../components/Video/Video'
+import data from '../../data'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: 100,
     padding: 20,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginBottom: 50
   },
   container: {
     maxWidth: 1600
@@ -22,24 +22,24 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const TourismAndRecreation = ({category}) => {
+const SalesChanel = ({category}) => {
    const classes = useStyles()
    const dataFromTheNewest = [...data].reverse()
+
     return ( 
       <div
       className={classes.root} 
       category={category}
       >
-      <h2>Turystyka i rekreacja</h2>
       <Grid 
       className={classes.container}
       justify="flex-start"
       alignItems="center"
       container 
-      spacing={0}
+      spacing={1}
       >
       {dataFromTheNewest.map( card => (
-        card.category === "Turystyka i rekreacja" ? 
+        card.category === "Kanał sprzedażowy" ? 
           <Grid item xs={12} sm={5} md={4} lg={3} key={card.id}>
             <Video card={card} className={classes.cards}></Video> 
           </Grid>
@@ -50,4 +50,19 @@ const TourismAndRecreation = ({category}) => {
      );
 }
  
-export default TourismAndRecreation;
+export default SalesChanel;
+
+
+
+{/* <AppBar position="static" color="transparent" elevation={2} className={classes.appBar}>
+<Toolbar
+ className={classes.toolBar}
+>
+  <Link>Nauka i Technika</Link>
+  <Link>Kultura i sztuka</Link>
+  <Link>Przedsiębiorczość i praca</Link>
+  <Link>Zdrowie i ekologia</Link>
+  <Link>Turystyka i rekreacja</Link>
+  <Link>Kanał sprzedażowy</Link>
+</Toolbar>
+</AppBar> */}

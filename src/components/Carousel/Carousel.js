@@ -9,12 +9,12 @@ import Video from '../Video/Video';
 const useStyles = makeStyles((theme) => ({
   container: {
     marginLeft: '9%',
-    marginTop: '4%',
+    marginTop: '3%',
     '@media (max-width: 1100px)' : {
       marginLeft: '5%',
     },
     '@media (max-width: 550px)' : {
-      marginTop: '10%',
+      marginTop: '8%',
       marginLeft: '3%',
     },
   },

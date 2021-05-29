@@ -82,7 +82,7 @@ export default function Video(props) {
               </Typography>
               </CardContent>
           </CardActionArea>
-          <CardActions className={classes.cardBottomBar}>
+          {/* <CardActions className={classes.cardBottomBar}>
               <Typography variant="body2" size="small" color="inherit">
               {card.time}
               </Typography>
@@ -93,7 +93,7 @@ export default function Video(props) {
                 >
               info
               </Button>
-          </CardActions>
+          </CardActions> */}
           </Card>
       </Link>
   );

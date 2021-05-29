@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core'
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
+import { blue } from '@material-ui/core/colors';
 // import img from '/images/banner.jpg'
 // import data from '../data'
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
   h1: {
     marginTop: 0,
+    marginBottom: 20,
     '@media (max-width: 1100px)' : {
       fontSize: '2rem'
     },
@@ -62,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   p: {
-    opacity: .6,
+    opacity: .8,
     '@media (max-width: 1100px)' : {
       fontSize: 14
     },
@@ -76,6 +78,10 @@ const useStyles = makeStyles((theme) => ({
   play : {
     fontSize: 150,
     color: 'white',
+    transition: '.1s',
+    '&:hover': {
+      fontSize: 160,
+    },
     '@media (max-width: 1100px)' : {
       fontSize: 100
     },

@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 80
   },
   appBar: {
-    backgroundColor: '#121a21',
-    backgroundColor: '#10161d',
+    backgroundColor: '#0f151b',
   },
   menuButton: {
     fontSize: 30

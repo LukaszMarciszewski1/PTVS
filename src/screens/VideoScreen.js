@@ -4,36 +4,47 @@ import data from '../data'
 import CardList from '../components/ListCard/ListCard'
 import ActiveVideo from '../components/ActiveVideo/ActiveVideo'
 import Card from '@material-ui/core/Card';
+
+import {Link} from 'react-router-dom';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      minHeight: '100vh',
+      // minHeight: '100vh',
       color: 'white',
       display: 'flex',
-      justifyContent: 'center',
-      padding: '20px 4%',
+      flexDirection: 'column',
+      // justifyContent: 'center',
+      alignItems: 'center',
+      maxWidth: 1650,
+      margin: '90px auto 40px',
       '@media (max-width: 1500px)' : {
-        padding: '20px 0',
+        // padding: '20px 0',
       }
     },
     container: {
-        background: '#10161d',
-        padding: 30,
+        background: '#121a21',
+        padding: 20,
         minWidth: '100%',
         display: 'flex',
-        justifyContent: 'space-between',
-        marginTop: 100,
+        // // justifyContent: 'space-bee',
+        // marginTop: 70,
         // maxHeight: '80vh',
         '@media (max-width: 1100px)' : {
           maxHeight: '100%',
           height: 'auto',
-          padding: 20,
+          padding: 15,
           flexDirection: 'column'
         }
     },
 
     videoContainer: {
-       width: '70%',
+       flex: 1,
        '@media (max-width: 1100px)' : {
         width: '100%',
       }
@@ -48,11 +59,17 @@ const useStyles = makeStyles((theme) => ({
         objectFit: 'cover',
         display: 'block', 
     },
-    list: {
-        width: '30%',
-        maxHeight: 700,
+    listContainer: {
+        // width: '30%',
+        maxHeight: '82vh',
         overflowY: 'scroll',
-        padding: '0 2% 0 4%',
+        // padding: '0 2% 0 4%',
+        // backgroundColor: '#0f151b',
+        // borderTop: '1px solid rgba(150, 150, 150, 1)',
+        padding: '0 10px 0 30px',
+        '@media (max-width: 1500px)' : {
+          maxHeight: '72vh',
+        },
         '@media (max-width: 1100px)' : {
           marginTop: 40,
           maxHeight: '100%',
@@ -67,6 +84,19 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '100%',
         backgroundColor: 'transparent',
         color: 'grey'
+      },
+      arrowContainer: {
+        marginTop: 70,
+      },
+      arrow: {
+        padding: 20,
+        borderRadius: 0,
+        borderRight: '1px solid grey',
+        '@media (max-width: 550px)' : {
+          padding: 10,
+          marginRight: 20,
+    
+        },
       },
 }));
 
@@ -85,11 +115,18 @@ const VideoScreen = (props) => {
 
     return ( 
         <div className={classes.root}>
-          <Card className={classes.container} elevation={3}>
+          {/* <div className={classes.arrowContainer}>
+            <Link to="/">
+              <IconButton color="inherit" aria-label="back" className={classes.arrow}>
+                <ArrowBackIosIcon />
+              </IconButton>
+            </Link>
+            </div> */}
+          <Card className={classes.container} elevation={0}>
             <div className={classes.videoContainer}>
               <ActiveVideo video={video} move={video}/>
             </div>
-            <div className={classes.list}>
+            <div className={classes.listContainer}>
               {dataFromTheNewest.map( card => (
               <CardList key={card.id} card={card}></CardList> //wstawic odwrotnosc wyswietlania
               ))}

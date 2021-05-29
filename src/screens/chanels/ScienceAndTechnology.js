@@ -2,17 +2,17 @@ import React from 'react';
 import 'react-multi-carousel/lib/styles.css';
 import { makeStyles } from '@material-ui/core'
 import Grid from '@material-ui/core/Grid';
-import Video from '../components/Video/Video'
-import data from '../data'
+import Video from '../../components/Video/Video'
+import data from '../../data'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: 100,
     padding: 20,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginBottom: 50
   },
   container: {
     maxWidth: 1600
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const CultureAndArt = ({category}) => {
+const ScienceAndTechnology = ({category}) => {
    const classes = useStyles()
    const dataFromTheNewest = [...data].reverse()
     return ( 
@@ -30,16 +30,15 @@ const CultureAndArt = ({category}) => {
       className={classes.root} 
       category={category}
       >
-      <h2>Kultura i sztuka</h2>
       <Grid 
       className={classes.container}
       justify="flex-start"
       alignItems="center"
       container 
-      spacing={2}
+      spacing={1}
       >
       {dataFromTheNewest.map( card => (
-        card.category === "Kultura i sztuka" ? 
+        card.category === "Nauka i Technika" ? 
           <Grid item xs={12} sm={5} md={4} lg={3} key={card.id}>
             <Video card={card} className={classes.cards}></Video> 
           </Grid>
@@ -50,4 +49,4 @@ const CultureAndArt = ({category}) => {
      );
 }
  
-export default CultureAndArt;
+export default ScienceAndTechnology;

@@ -1,73 +1,73 @@
 
    const cards = [
       {
-        title: "Tehnika 1",
+        title: "Technika 1",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic01.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 1
       },
       {
-        title: "Tehnika 2",
+        title: "Technika 2",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic02.jpg',
         move: '/video/Spot-PTVS-v1.0.mp4',
         id: 2
       },
       {
-        title: "Tehnika 3",
+        title: "Technika 3",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic03.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 3
       },
       {
-        title: "Tehnika 4",
+        title: "Technika 4",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic04.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 4
       },
       {
-        title: "Tehnika5",
+        title: "Technika5",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic05.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 5
       },
       {
-        title: "Tehnika 6",
+        title: "Technika 6",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic06.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 6
       },
       {
-        title: "Tehnika 7",
+        title: "Technika 7",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic08.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 7
       },
       {
-        title: "Tehnika 8",
+        title: "Technika 8",
         description: "lorem ipsum dolor",
         time: "15:22:21",
-        category: "Nauka i Tehnika",
+        category: "Nauka i Technika",
         img: '/images/pic09.jpg',
         move: '/video/SpotPTVS2.mp4',
         id: 8

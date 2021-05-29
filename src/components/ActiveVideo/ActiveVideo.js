@@ -5,22 +5,21 @@ import Typography from '@material-ui/core/Typography';
 import ReactPlayer from 'react-player'
 const useStyles = makeStyles((theme) => ({
     container: {
-       width: '100%',
-       fontWeight: 'lighter'
+      //  width: '100%',
+       fontWeight: 'lighter',
+      //  maxWidth: 1200
     },
     video: {
       width: '100%',
-      maxWidth: 1000
-      // maxHeight: 500,
-      // overflow: 'hidden'
+      flex: 1
     },
     img: {
       width: '100%'
     },
     description: {
-      padding: '20px 0 40px',
+      padding: '15px 0',
       color: 'grey',
-      borderBottom: '1px solid rgb(31, 41, 56)',
+      borderBottom: '1px solid rgba(150, 150, 150, 0.2)',
       '@media (max-width: 1100px)' : {
         borderBottom: '1px solid grey'
       }
@@ -50,9 +49,6 @@ const ActiveVideo = (props) => {
       </Typography>
       <Typography variant="body2" gutterBottom>
         {video.description}
-      </Typography>
-      <Typography variant="body2">
-        {video.time}
       </Typography>
       </div>
     </div>

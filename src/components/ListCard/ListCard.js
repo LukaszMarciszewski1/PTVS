@@ -11,7 +11,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 const useStyles = makeStyles((theme) => ({
     image: {
       width: 128,
-      height: 60,
+      height: 80,
     },
     img:{
         width: '100%',
@@ -23,18 +23,27 @@ const useStyles = makeStyles((theme) => ({
         width: '30%',
         maxHeight: '100%',
         overflowY: 'scroll',
-        paddingLeft: 20
+        paddingLeft: 20,
       },
       paper: {
-        padding: theme.spacing(2),
+        padding: 14,
         margin: 'auto',
-        maxWidth: 500,
-        backgroundColor: 'rgba(31, 41, 56, 0.2)',
+        width: 400,
+        // minWidth: 320,
+        border: '1px solid rgba(150, 150, 150, 0.1)',
+        backgroundColor: '#151f27',
         color: 'grey',
         transition: '.2s',
         marginBottom: 10,
+        '@media (max-width: 1100px)' : {
+          width: '100%',
+        },
+        '@media (max-width: 550px)' : {
+          backgroundColor: 'transparent',
+        },
         '&:hover':{
-          backgroundColor: 'rgb(31, 41, 56)'
+          backgroundColor: 'rgba(31, 41, 56, 0.6)',
+          border: '1px solid rgba(150, 150, 150, 0.2)',
         }
       },
 }));

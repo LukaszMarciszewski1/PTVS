@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import axios from 'axios'
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,15 +9,16 @@ import Baner from '../components/Baner/Baner'
 // import img from '/images/banner.jpg'
 // import Video from '../components/Video/Video';
 import Carousel from '../components/Carousel/Carousel';
+import Subsidy from '../components/Subsidy/Subsidy';
+import Info from '../components/Info/Info';
 import data from '../data'
 
 
 const StyledTabs = withStyles({
   root: {
       padding: '15px 20px',
-      backgroundColor: '#1b262f',
-      backgroundColor: 'rgb(33, 44, 61)',
       backgroundColor: 'rgb(31, 41, 56)',
+      // backgroundColor: 'transparent',
       "& .MuiTabScrollButton-root:first-child": {
           backgroundColor: '#1f2c3885',
       },
@@ -56,6 +57,7 @@ root: {
   flexGrow: 1,
   width: '100%',
 },
+
 tabPanelContent: {
   marginLeft: '9%',
   marginTop: '4%',
@@ -85,24 +87,14 @@ const a11yProps = (index) => {
 
 const HomePage = () => {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0); //usunac prefix
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
-  // const [cards, setCards] = useState([])
-  // useEffect(() => {
-  // const fetchData = async () => {
-  //   const { data } = await axios.get('/api/videos');
-  //   setCards(data)
 
-  // };
-  // fetchData()
-  // }, [])
-  // const newVideo = [...data.pop()];
   return ( 
-    <div>
+    <div className={classes.container}>
       <Baner img={'/images/banner.jpg'} newVideo={`/video/${data.length}`}/>
       <AppBar position="static" color="transparent" elevation={2}>
         <StyledTabs
@@ -113,7 +105,7 @@ const HomePage = () => {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <StyledTab label="Nauka i Tehnika" {...a11yProps(0)} />
+          <StyledTab label="Nauka i Technika" {...a11yProps(0)} />
           <StyledTab label="Kultura i sztuka" {...a11yProps(1)} />
           <StyledTab label="Przedsiębiorczość i praca" {...a11yProps(2)} />
           <StyledTab label="Zdrowie i ekologia" {...a11yProps(3)} />
@@ -123,8 +115,8 @@ const HomePage = () => {
       </AppBar>
       <TabPanel index={0} value={value}>
         <Carousel
-          toCategory={'/Nauka-i-Tehnika'}
-          category={'Nauka i Tehnika'}
+          toCategory={'/Nauka-i-Technika'}
+          category={'Nauka i Technika'}
           data = {data}
         />
       </TabPanel>
@@ -163,6 +155,8 @@ const HomePage = () => {
           data = {data}
         />
       </TabPanel>
+      <Info/>
+      <Subsidy/>
     </div>
   );
 }
