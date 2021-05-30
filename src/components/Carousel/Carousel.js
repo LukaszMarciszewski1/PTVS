@@ -10,12 +10,15 @@ const useStyles = makeStyles((theme) => ({
   container: {
     marginLeft: '9%',
     marginTop: '3%',
-    '@media (max-width: 1100px)' : {
+    '@media (max-width: 1500px)' : {
       marginLeft: '5%',
+    },
+    '@media (max-width: 1100px)' : {
+      marginLeft: '3%',
     },
     '@media (max-width: 550px)' : {
       marginTop: '8%',
-      marginLeft: '3%',
+      marginLeft: 15,
     },
   },
   carouselContainer: {
@@ -41,7 +44,7 @@ const responsive = {
   tablet: {
     breakpoint: { max: 1100, min: 550 },
     items: 2,
-    paritialVisibilityGutter: 40
+    paritialVisibilityGutter: 20
   },
   mobile: {
     breakpoint: { max: 550, min: 0 },

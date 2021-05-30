@@ -15,7 +15,6 @@ import { blue } from '@material-ui/core/colors';
       width: '100%',
       margin: '0 auto 0',
       display: 'flex',
-      // justifyContent: 'center',
       backgroundColor: 'rgba(31, 41, 56)',
     },
     card: {
@@ -27,10 +26,15 @@ import { blue } from '@material-ui/core/colors';
       zIndex: 3,
       maxWidth: 1300,
       marginLeft: '9%',
-      // margin: '0 auto',
+      '@media (max-width: 1500px)' : {
+        marginLeft: '5%',
+      },
       '@media (max-width: 1100px)' : {
+        marginLeft: '3%',
         flexDirection: 'column',
-        // textAlign: 'center'
+      },
+      '@media (max-width: 550px)' : {
+        marginLeft: 15,
       },
     },
     cardContent: {
@@ -49,9 +53,11 @@ import { blue } from '@material-ui/core/colors';
     },
     cardAction: {
       display: 'flex',
-      // flexDirection: 'column',
-      paddingLeft: 40,
+      padding: '0 20px 0 40px',
       borderLeft: '1px solid rgba(150, 150, 150, 0.4)',
+      '@media (max-width: 1500px)' : {
+        paddingLeft: 20,
+      },
       '@media (max-width: 1100px)' : {
         borderLeft: 'none',
         paddingLeft: 0,

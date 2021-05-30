@@ -20,31 +20,26 @@ const useStyles = makeStyles((theme) => ({
       margin: 10
     },
   },
-  titleText: {
-    margin: '0 20px',
-    // fontSize: '1.8rem',
-    '@media (max-width: 1100px)' : {
-      margin: '15px 0 0',
-    },
-  },
   goToButton : {
     padding: 0,
     letterSpacing: 1,
-    // border: '1px solid grey',
-    // borderLeft: '1px solid grey',
     fontSize: '1.3rem',
     display: 'flex',
     alignItems: 'center',
     borderRadius: 5,
     transition: '.2s',
-    // opacity: .9,
     borderRadius: 0,
     '&:hover':{
       opacity: 1
-      // backgroundColor: 'rgba(31, 41, 56, .2)',
+    },
+    '&:hover > *':{
+      transform: 'translateX(10px)',
     }
   },
-
+  icon: {
+    fontSize: 40,
+    transition: '.2s'
+  }
 }));
 
 
@@ -54,7 +49,7 @@ const Title = ({ toCategory, category}) => {
     <div className={classes.titleContent}>
     <Link to={toCategory} className={classes.goToButton}>
      {category}
-      <KeyboardArrowRightIcon style={{paddingLeft: "10px", fontSize: 40}}/>
+      <KeyboardArrowRightIcon className={classes.icon}/>
     </Link>
     {/* <Typography variant="h5" component="h2" className={classes.titleText}>
       {category}

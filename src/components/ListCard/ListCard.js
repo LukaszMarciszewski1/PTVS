@@ -12,11 +12,15 @@ const useStyles = makeStyles((theme) => ({
     image: {
       width: 128,
       height: 80,
+      '@media (max-width: 550px)' : {
+        width: '100%',
+        height: 150
+      },
     },
     img:{
         width: '100%',
         height: '100%',
-        objectFit: 'cover',
+        // objectFit: 'cover',
         display: 'block', 
     },
     list: {
@@ -26,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: 20,
       },
       paper: {
-        padding: 14,
+        padding: 5,
         margin: 'auto',
         width: 400,
         // minWidth: 320,
-        border: '1px solid rgba(150, 150, 150, 0.1)',
+        // border: '1px solid rgba(150, 150, 150, 0.1)',
         backgroundColor: '#151f27',
         color: 'grey',
         transition: '.2s',
@@ -40,12 +44,16 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media (max-width: 550px)' : {
           backgroundColor: 'transparent',
+          padding: 5
         },
         '&:hover':{
           backgroundColor: 'rgba(31, 41, 56, 0.6)',
-          border: '1px solid rgba(150, 150, 150, 0.2)',
+          // border: '1px solid rgba(150, 150, 150, 0.2)',
         }
       },
+      title: {
+        fontWeight: '600'
+      }
 }));
 
 export default function CardList(props) {
@@ -69,14 +77,11 @@ export default function CardList(props) {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Typography gutterBottom variant="subtitle1">
+                      <Typography gutterBottom variant="subtitle1" className={classes.title}>
                         {card.title}
                       </Typography>
                       <Typography variant="body2" gutterBottom>
                         {card.description}
-                      </Typography>
-                      <Typography variant="body2">
-                        {card.time}
                       </Typography>
                     </Grid>
                   </Grid>

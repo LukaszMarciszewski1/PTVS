@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     img: {
       width: '100%'
     },
+    title: {
+      fontWeight: '600'
+    },
     description: {
       padding: '15px 0',
       color: 'grey',
@@ -44,7 +47,7 @@ const ActiveVideo = (props) => {
         />
       </div>
       <div className={classes.description}>
-      <Typography gutterBottom variant="h5" component="h3">
+      <Typography gutterBottom variant="h5" component="h3" className={classes.title}>
         {video.title}
       </Typography>
       <Typography variant="body2" gutterBottom>

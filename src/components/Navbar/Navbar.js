@@ -56,9 +56,9 @@ const Navbar = () => {
                     <Link to="/" className={classes.logoContainer}>
                       <img src='/logo.svg' alt="logo" className={classes.logo}/>
                     </Link>
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                   <MenuIcon className={classes.menuIcon}/>
-                </IconButton>
+                </IconButton> */}
             </Toolbar>
           </AppBar>
           </div>
