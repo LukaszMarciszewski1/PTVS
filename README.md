@@ -1,15 +1,58 @@
-# Getting Started with Create React App
+# PTVS Vision Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website with playlist videos and social media login panel
 
-## Available Scripts
+## Demo Website
 
-In the project directory, you can run:
+- 👉 Heroku : [https://ptvs-app.herokuapp.com](https://ptvs-app.herokuapp.com)
 
-### `npm run dev`
+## What I use?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- Material-UI
+- Node (version 14.17.0) & Express
+- MongoDB: Mongoose
+- Google Cloud Storage
+- Auth: react-facebook-login, react-google-login
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Run Locally
+
+### 1. Clone repo
+
+```
+You can just clone repository files and run to install all dependencies:
+
+```
+### 2. Install Backend
+
+$ npm install
+
+### 3. Install Frontend
+
+```
+# open new terminal
+$ cd client
+$ npm install
+
+```
+
+### 4. Run app
+
+$ cd .. 
+$ npm run dev
+
+### 5.If you want to use your own resources 
+
+You will need to fill .env.txt file with your data, and then remove .txt from file name.
+Delete the env.local file
+
+Project files are located in ./client/src and root folder
+
+# Setup MongoDB
+- Atlas Cloud MongoDB
+  - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
+  - Create Storage at [https://console.cloud.google.com/](https://console.cloud.google.com/) and add your resources
+  - You will also need Mondo DB with your data
+
+
+
