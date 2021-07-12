@@ -1,6 +1,6 @@
 # PTVS Vision Website
 
-Website with playlist videos and social media login panel
+Website with playlist videos and social media login panel. The project is in progress
 
 ## Demo Website
 
