@@ -1,6 +1,6 @@
 # PTVS Vision Website
 
-Website with playlist videos and social media login panel
+Website with videos and social media login panel. The project is in progress
 
 ## Demo Website
 
@@ -48,7 +48,7 @@ Delete the env.local file
 
 Project files are located in ./client/src and root folder
 
-# Setup MongoDB
+### Setup MongoDB
 - Atlas Cloud MongoDB
   - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
   - Create Storage at [https://console.cloud.google.com/](https://console.cloud.google.com/) and add your resources
