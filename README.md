@@ -6,7 +6,7 @@ Website with videos and social media login panel. The project is in progress
 
 - 👉 Heroku : [https://ptvs-app.herokuapp.com](https://ptvs-app.herokuapp.com)
 
-## What I use?
+## Built with
 
 - React
 - Material-UI
