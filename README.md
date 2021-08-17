@@ -2,10 +2,6 @@
 
 Website with videos and social media login panel. The project is in progress
 
-## Demo Website
-
-- 👉 Heroku : [https://ptvs-app.herokuapp.com](https://ptvs-app.herokuapp.com)
-
 ## Built with
 
 - React
