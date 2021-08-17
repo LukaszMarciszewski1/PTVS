@@ -44,7 +44,6 @@ $ npm run dev
 ### 5.If you want to use your own resources 
 
 You will need to fill .env.txt file with your data, and then remove .txt from file name.
-Delete the env.local file
 
 Project files are located in ./client/src and root folder
 
