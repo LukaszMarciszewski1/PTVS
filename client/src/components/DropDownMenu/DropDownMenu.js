@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import {
 	Accordion,
 	AccordionSummary,
@@ -12,18 +12,18 @@ import useOnClickOutside from "../../hooks/useOnClickOutside";
 const useStyles = makeStyles((theme) => ({
 	accordion: {
 		opacity: 1,
-		width: '100%',
+		width: "100%",
 		color: "inherit",
 		borderBottom: theme.border,
 		marginBottom: 20,
-		position: 'absolute',
+		position: "absolute",
 		top: 0,
 		left: 0,
 		background: theme.colors.background,
 		zIndex: 2,
 	},
 	summary: {
-		padding: '15px 25px',
+		padding: "15px 25px",
 	},
 	iconSelect: {
 		color: theme.colors.white,
@@ -35,18 +35,18 @@ const SelectList = ({ children, selectCategory }) => {
 	const ref = useRef(null);
 	const [expanded, setExpanded] = useState(false);
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? true : false);
-  };
+	const handleChange = (panel) => (event, isExpanded) => {
+		setExpanded(isExpanded ? true : false);
+	};
 
-  useOnClickOutside(ref,()=> setExpanded(false))
+	useOnClickOutside(ref, () => setExpanded(false));
 
 	return (
-		<Accordion 
-		className={classes.accordion}
-		expanded={expanded} 
-		onChange={handleChange('panel')}
-		ref={ref}
+		<Accordion
+			className={classes.accordion}
+			expanded={expanded}
+			onChange={handleChange("panel")}
+			ref={ref}
 		>
 			<AccordionSummary
 				className={classes.summary}
@@ -54,11 +54,15 @@ const SelectList = ({ children, selectCategory }) => {
 				aria-controls="panel1a-content"
 				id="panel1a-header"
 			>
-				<Typography variant="body1" component="p">
+				<Typography
+					variant="body1"
+					component="p"
+
+				>
 					{selectCategory}
 				</Typography>
 			</AccordionSummary>
-			{children}
+			<div onClick={() => setExpanded(false)}>{children}</div>
 		</Accordion>
 	);
 };

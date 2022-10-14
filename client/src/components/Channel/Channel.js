@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import VideoCard from "../VideoCard/VideoCard";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 	root: {
 		flexGrow: 1,
 		padding: 30,
@@ -42,7 +42,7 @@ const Channel = ({ category, data }) => {
 							<VideoCard
 								card={card}
 								className={classes.cards}
-							></VideoCard>
+							/>
 						</Grid>
 					) : (
 						[]

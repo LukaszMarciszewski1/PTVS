@@ -11,17 +11,9 @@ import { grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
 	imgContainer: {
-		width: 120,
-		height: 80,
+		width: 100,
+		height: 60,
 		padding: 0,
-		"@media (max-width: 1100px)": {
-			width: 240,
-			height: 110,
-		},
-		"@media (max-width: 550px)": {
-			width: "100%",
-			height: 150,
-		},
 	},
 	img: {
 		width: "100%",
@@ -34,19 +26,15 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: 8,
 		margin: "auto",
 		width: 350,
-		backgroundColor: theme.colors.cardListBg,
+		backgroundColor: "transparent",
 		color: grey[400],
 		transition: ".2s",
 		borderRadius: 4,
 		"@media (max-width: 1100px)": {
 			width: "100%",
-			backgroundColor: "transparent",
-		},
-		"@media (max-width: 550px)": {
-			backgroundColor: "transparent",
 		},
 		"&:hover": {
-			backgroundColor: theme.colors.cardListBgActive,
+			backgroundColor: theme.colors.cardListBg,
 			color: grey[200],
 		},
 	},
@@ -55,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	active: {
 		color: grey[200],
-		backgroundColor: theme.colors.cardListBgActive,
+		backgroundColor: theme.colors.cardListBg,
 	},
 }));
 
@@ -87,7 +75,7 @@ const CardList = ({ data, active, category, setCategory }) => {
 											/>
 										</ButtonBase>
 									</Grid>
-									<Grid item xs={12} sm container>
+									<Grid item xs={8} sm container>
 										<Grid
 											item
 											xs

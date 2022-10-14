@@ -11,7 +11,6 @@ module.exports = {
 
   async getVideo(req, res) {
     const id = req.params._id
-    console.log(id)
     try {
       const video = await Video.findOne({ _id: id })
       res.status(200).json(video)
