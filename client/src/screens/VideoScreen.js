@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { makeStyles, Tabs } from "@material-ui/core";
 
-import { ApiContext } from "../store/ApiContext";
-import categoryData from "../store/categoryData";
+import { ApiContext } from "../context/ApiContext";
+import categoryData from "../data/localData";
 
 import a11yProps from "../components/Tabs/a11yProps";
 import ActiveVideo from "../components/ActiveVideo/ActiveVideo";

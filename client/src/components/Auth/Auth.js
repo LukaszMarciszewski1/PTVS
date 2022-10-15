@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { LoginContext } from "../../store/LoginContext";
-import GoogleLogin from "react-google-login";
-import FacebookLogin from "react-facebook-login";
+import { AuthContext } from "../../context/AuthContext";
 import {
 	makeStyles,
 	Avatar,
@@ -12,7 +10,9 @@ import {
 	Container,
 } from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import { GoogleIcon, FacebookIcon } from "./icons";
+import { GoogleIcon } from "../../assets/icons";
+import { auth } from "../../firebase/firebase";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -21,7 +21,11 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	paper: {
-		margin: "35% auto",
+		width: 400,
+		position: "absolute",
+		left: "50%",
+		top: "50%",
+		transform: "translate(-50%, -50%)",
 		display: "flex",
 		flexDirection: "column",
 		alignItems: "center",
@@ -67,38 +71,20 @@ const useStyles = makeStyles((theme) => ({
 const Auth = () => {
 	const classes = useStyles();
 	const history = useHistory();
-	const { setLogin } = useContext(LoginContext);
+	const { dispatch } = useContext(AuthContext);
 
-	const setProfile = (name, picture) => {
-		setLogin(true);
-		localStorage.setItem("profile", JSON.stringify({ name, picture }));
-		history.push("/");
-	};
+	const provider = new GoogleAuthProvider();
 
-	const googleSuccess = async (response) => {
-		const result = response.profileObj;
-		const name = result.name;
-		const picture = result.imageUrl;
-		try {
-			setProfile(name, picture);
-		} catch (err) {
-			console.log(err);
-		}
-	};
-
-	const googleFailure = (error) => {
-		console.log(error);
-	};
-
-	const responseFacebook = async (response) => {
-		const result = response;
-		const name = result.name;
-		const picture = result.picture.data.url;
-		try {
-			setProfile(name, picture);
-		} catch (err) {
-			console.log(err);
-		}
+	const signInWithGoogle = () => {
+		signInWithPopup(auth, provider)
+			.then((result) => {
+				const user = result.user;
+				dispatch({ type: "LOGIN", payload: user });
+				history.push("/");
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	return (
@@ -109,31 +95,13 @@ const Auth = () => {
 				</Avatar>
 				<Typography variant="h5">Sign In</Typography>
 				<div className={classes.buttonsContainer}>
-					<GoogleLogin
-						clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-						onSuccess={googleSuccess}
-						onFailure={googleFailure}
-						cookiePolicy="single_host_origin"
-						render={(renderProps) => (
-							<button
-								className={`${classes.button} ${classes.googleButton}`}
-								onClick={renderProps.onClick}
-								disable={renderProps.disable}
-							>
-								<GoogleIcon />
-								&nbsp;&nbsp;GOOGLE SIGN IN
-							</button>
-						)}
-					/>
-					<FacebookLogin
-						appId={process.env.REACT_APP_FACEBOOK_APP_ID}
-						autoLoad={false}
-						fields="name,email,picture"
-						textButton="&nbsp;&nbsp;FACEBOOK SIGN IN"
-						callback={responseFacebook}
-						cssClass={`${classes.button} ${classes.facebookButton}`}
-						icon={<FacebookIcon />}
-					/>
+					<button
+						className={`${classes.button} ${classes.googleButton}`}
+						onClick={signInWithGoogle}
+					>
+						<GoogleIcon />
+						&nbsp;&nbsp;GOOGLE SIGN IN
+					</button>
 				</div>
 				<Grid container justify="center">
 					<Grid item>

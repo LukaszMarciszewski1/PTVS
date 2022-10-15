@@ -6,6 +6,7 @@ import {
 	Typography,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { signInWithGoogle } from "../../firebase/firebase";
 
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 
@@ -54,11 +55,7 @@ const SelectList = ({ children, selectCategory }) => {
 				aria-controls="panel1a-content"
 				id="panel1a-header"
 			>
-				<Typography
-					variant="body1"
-					component="p"
-
-				>
+				<Typography variant="body1" component="p">
 					{selectCategory}
 				</Typography>
 			</AccordionSummary>
