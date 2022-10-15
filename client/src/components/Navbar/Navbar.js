@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
-
-import { LoginContext } from "../../store/LoginContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase";
+import { AuthContext } from "../../context/AuthContext";
 import {
 	makeStyles,
 	AppBar,
@@ -77,18 +78,20 @@ const Navbar = (props) => {
 	const classes = useStyles(props);
 	const history = useHistory();
 	const location = useLocation();
-	const { login, setLogin } = useContext(LoginContext);
-
-	const userStorage = JSON.parse(localStorage.getItem("profile"));
-
-	const [user, setUser] = useState(userStorage);
 	const [visible, setVisible] = useState(true);
+	const { user, dispatch } = useContext(AuthContext);
 
-	const logout = () => {
+	const logout = async () => {
+		const result = window.confirm("Do you want to log out?");
+		if (!result) return;
 		history.push("/");
-		setUser(null);
-		localStorage.clear();
-		setLogin(false);
+		await signOut(auth)
+			.then(() => {
+				dispatch({ type: "LOGOUT", user: null });
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	const handleScroll = () => {
@@ -100,7 +103,6 @@ const Navbar = (props) => {
 	};
 
 	useEffect(() => {
-		setUser(userStorage);
 		window.addEventListener("scroll", handleScroll);
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -119,7 +121,7 @@ const Navbar = (props) => {
 					to="/"
 					variant="h6"
 					className={`${classes.logo} ${
-						login ? classes.logoCenter : null
+						user ? classes.logoCenter : null
 					}`}
 				>
 					PTVS Vision{" "}
@@ -130,13 +132,13 @@ const Navbar = (props) => {
 							<Avatar
 								className={classes.avatar}
 								alt={user.name}
-								src={user.picture}
+								src={user.photoURL}
 							/>
 							<Typography
 								className={classes.userName}
 								variant="body1"
 							>
-								{user.name}
+								{user.displayName}
 							</Typography>
 						</div>
 						<Button

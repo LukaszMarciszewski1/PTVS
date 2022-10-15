@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 
-import { ApiContext } from "../store/ApiContext";
-import categoryData from "../store/categoryData";
+import { ApiContext } from "../context/ApiContext";
+import categoryData from "../data/localData";
 
 import { makeStyles, AppBar } from "@material-ui/core";
 

@@ -4,15 +4,16 @@ import { useHistory } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { makeStyles, Tabs } from "@material-ui/core";
 
-import { ApiContext } from "../store/ApiContext";
-import categoryData from "../store/categoryData";
+import { ApiContext } from "../context/ApiContext";
+import categoryData from "../data/localData";
 
 import a11yProps from "../components/Tabs/a11yProps";
 import ActiveVideo from "../components/ActiveVideo/ActiveVideo";
-import CardList from "../components/ListCard/ListCard";
+import CardsList from "../components/CardsList/CardsList";
 import TabPanel from "../components/Tabs/TabPanel";
 import StyledTab from "../components/Tabs/TabVertical";
-import SelectList from "../components/SelectList/SelectList";
+import DropDownMenu from "../components/DropDownMenu/DropDownMenu";
+import FileForm from "../components/FileForm/FileForm";
 import Loading from "../components/Loading/Loading";
 
 const useStyles = makeStyles((theme) => ({
@@ -35,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	listContainer: {
-		position: 'relative',
+		position: "relative",
 		maxWidth: "100%",
-		height: "100%",
+		height: 700,
 		display: "flex",
 		flexDirection: "column",
 		borderRadius: 20,
@@ -57,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	list: {
 		marginTop: 100,
-		height: "calc(100% - 60px)",
+		maxHeight: 500,
+		height: 500,
 		overflowY: "scroll",
 		paddingRight: 10,
 		"@media (max-width: 1100px)": {
@@ -123,7 +125,8 @@ const VideoScreen = (props) => {
 		(video) => video.category === selectedCategory.category
 	);
 
-	const nextVideo = currentVideoIndex < currentCategory.length - 1
+	const nextVideo =
+		currentVideoIndex < currentCategory.length - 1
 			? currentVideoIndex + 1
 			: 0;
 
@@ -161,7 +164,7 @@ const VideoScreen = (props) => {
 				</ActiveVideo>
 			</div>
 			<div className={classes.listContainer}>
-				<SelectList
+				<DropDownMenu
 					selectCategory={currentCategory[currentVideoIndex].category}
 				>
 					<Tabs
@@ -182,10 +185,10 @@ const VideoScreen = (props) => {
 								key={item.index}
 								{...a11yProps(item.index)}
 								label={item.category}
-							></StyledTab>
+							/>
 						))}
 					</Tabs>
-				</SelectList>
+				</DropDownMenu>
 				<div className={classes.list}>
 					{categoryData.map((item) => (
 						<TabPanel
@@ -193,7 +196,7 @@ const VideoScreen = (props) => {
 							index={item.index}
 							value={categoryTabIndex}
 						>
-							<CardList
+							<CardsList
 								data={videos}
 								active={currentCategory[currentVideoIndex]}
 								category={item.category}
@@ -202,6 +205,7 @@ const VideoScreen = (props) => {
 						</TabPanel>
 					))}
 				</div>
+				<FileForm />
 			</div>
 		</div>
 	);
