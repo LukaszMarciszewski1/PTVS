@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	h1: {
+		maxWidth: 800,
 		marginBottom: theme.spacing(2),
 		fontWeight: 700,
 		letterSpacing: 2,
@@ -117,10 +118,11 @@ const useStyles = makeStyles((theme) => ({
 
 const NewVideoBaner = ({ img, newVideo, title, description }) => {
 	const classes = useStyles();
+	const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
 	return (
 		<div className={classes.root}>
 			<div className={classes.textContainer}>
-				<img className={classes.img} src={img} alt="new video" />
+				<img className={classes.img} src={IMAGE_PATH + img} alt="new video" />
 				<div className={classes.text}>
 					<Typography
 						variant="h3"
@@ -139,7 +141,7 @@ const NewVideoBaner = ({ img, newVideo, title, description }) => {
 				</div>
 			</div>
 			<div className={classes.playContainer}>
-				<img className={classes.img} src={img} alt="new video" />
+				<img className={classes.img} src={IMAGE_PATH + img} alt="new video" />
 				<FiberNewIcon className={classes.iconNew} />
 				<Link to={`/video/${newVideo}`}>
 					<IconButton aria-label="play arrow icon" color="primary">

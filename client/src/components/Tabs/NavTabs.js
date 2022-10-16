@@ -4,7 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 
 const StyledTabs = withStyles({
 	root: {
-		padding: "15px 20px",
+		padding: "15px 10px",
 		"& .MuiTabScrollButton-root:first-child": {
 			backgroundColor: "#1f2c3885",
 		},

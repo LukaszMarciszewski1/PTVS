@@ -9,6 +9,7 @@ import { theme } from "./theme/index";
 import Loading from "./components/Loading/Loading";
 import NavBar from "./components/Navbar/Navbar";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Footer from "./components/Footer/Footer";
 
 const HomeScreen = lazy(() => import("./screens/HomeScreen"));
 const VideoScreen = lazy(() => import("./screens/VideoScreen"));
@@ -34,7 +35,7 @@ function App() {
 									/>
 									<Route path="/auth" component={Auth} />
 									<Route
-										path="/video/:_id"
+										path="/video/:id"
 										component={VideoScreen}
 									/>
 									<ChannelScreen />
@@ -42,7 +43,7 @@ function App() {
 							</ApiProvider>
 						</main>
 					</Suspense>
-					{/* <Footer /> */}
+					<Footer />
 				</Router>
 			</AuthProvider>
 		</ThemeProvider>

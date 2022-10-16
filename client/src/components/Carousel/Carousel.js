@@ -52,12 +52,12 @@ const responsive = {
 	},
 };
 
-const CarouselContent = ({ goToCategory, category, data }) => {
+const CarouselContent = ({ path, genreId, categoryName, data }) => {
 	const classes = useStyles();
 
 	return (
 		<div className={classes.root}>
-			<TitleLink goToCategory={goToCategory} category={category} />
+			<TitleLink path={path} category={categoryName} />
 			<div className={classes.carouselContainer}>
 				<Carousel
 					arrows={false}
@@ -68,8 +68,8 @@ const CarouselContent = ({ goToCategory, category, data }) => {
 					customButtonGroup={<ButtonsGroup />}
 				>
 					{data.map((card) =>
-						card.category === category ? (
-							<Video key={card._id} card={card}></Video>
+						card.genre_ids[0] === genreId ? (
+							<Video key={card.id} card={card}></Video>
 						) : (
 							[]
 						)

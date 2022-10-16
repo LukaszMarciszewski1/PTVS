@@ -97,49 +97,58 @@ const useStyles = makeStyles((theme) => ({
 const VideoScreen = (props) => {
 	const classes = useStyles();
 	const history = useHistory();
+	const { videos, video, trailer, loading, fetchMovie, selectMovie } =
+		useContext(ApiContext);
+	const [selectVideo, setSelectVideo] = useState({});
 
-	const { videos, loading } = useContext(ApiContext);
-	const video = videos.find((x) => x._id === props.match.params._id);
-
-	const findIndexTab = () => {
-		let findCurrentTab;
-		if (video) {
-			findCurrentTab = categoryData.find(
-				(tab) => tab.category === video.category
-			);
-		}
-		const index = categoryData.indexOf(findCurrentTab);
-		const findCurrentIndex = index >= 0 ? index : 0;
-		return findCurrentIndex;
-	};
-
-	const currentTab = findIndexTab();
-	const [categoryTabIndex, setCategoryTabIndex] = useState(currentTab);
-	const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-
-	const selectedCategory = categoryData.find(
-		(item) => item.index === currentTab
-	);
-
-	const currentCategory = [...videos].filter(
-		(video) => video.category === selectedCategory.category
-	);
-
-	const nextVideo =
-		currentVideoIndex < currentCategory.length - 1
-			? currentVideoIndex + 1
-			: 0;
-
-	const videoIndex = currentCategory.indexOf(video);
-
-	const handleChangeTab = (event, newValue) => {
-		setCategoryTabIndex(newValue);
-	};
+	// const video = videos.find((x) => x.id === props.match.params.id);
 
 	useEffect(() => {
-		const active = videoIndex > 0 ? videoIndex : 0;
-		setCurrentVideoIndex(active);
-	}, [videoIndex]);
+		setSelectVideo(selectMovie(props.match.params.id));
+	}, [props]);
+
+	console.log(trailer);
+
+	// const findIndexTab = () => {
+	// 	let findCurrentTab;
+	// 	if (video) {
+	// 		findCurrentTab = categoryData.find(
+	// 			(tab) => tab.genre_ids === video.genre_ids[0]
+	// 		);
+	// 	}
+	// 	const index = categoryData.indexOf(findCurrentTab);
+	// 	const findCurrentIndex = index >= 0 ? index : 0;
+	// 	return findCurrentIndex;
+	// };
+
+	// const currentTab = findIndexTab();
+	// const [categoryTabIndex, setCategoryTabIndex] = useState(currentTab);
+	// const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+	// const selectedCategory = categoryData.find(
+	// 	(item) => item.index === currentTab
+	// );
+
+	// const currentCategory = [...videos].filter(
+	// 	(video) => video.genre_ids[0] === selectedCategory.genre_ids
+	// );
+
+	// const nextVideo =
+	// 	currentVideoIndex < currentCategory.length - 1
+	// 		? currentVideoIndex + 1
+	// 		: 0;
+
+	// const videoIndex = currentCategory.indexOf(video);
+
+	// const handleChangeTab = (event, newValue) => {
+	// 	setCategoryTabIndex(newValue);
+	// };
+
+	// useEffect(() => {
+	// 	const active = videoIndex > 0 ? videoIndex : 0;
+	// 	setCurrentVideoIndex(active);
+	// }, [videoIndex]);
+	// const triler = video.videos.results[0].key;
 
 	if (loading) {
 		return <Loading />;
@@ -148,22 +157,33 @@ const VideoScreen = (props) => {
 	return (
 		<div className={classes.container}>
 			<div className={classes.videoContainer}>
-				<ActiveVideo video={currentCategory[currentVideoIndex]}>
+				<ReactPlayer
+					className="react-player"
+					url={`https://www.youtube.com/watch?v=${trailer.key}`}
+					width="100%"
+					height="100%"
+					controls={true}
+					playing={true}
+					onEnded={() => {
+						history.push("/");
+					}}
+				/>
+				{/* <ActiveVideo video={currentCategory[currentVideoIndex]}>
 					<ReactPlayer
 						className="react-player"
-						url={currentCategory[currentVideoIndex].move}
+						url={currentCategory[currentVideoIndex].video}
 						width="100%"
 						height="100%"
 						controls={true}
 						playing={true}
 						onEnded={() => {
 							setCurrentVideoIndex(nextVideo);
-							history.push(currentCategory[nextVideo]._id);
+							history.push(currentCategory[nextVideo].id);
 						}}
 					/>
-				</ActiveVideo>
+				</ActiveVideo> */}
 			</div>
-			<div className={classes.listContainer}>
+			{/* <div className={classes.listContainer}>
 				<DropDownMenu
 					selectCategory={currentCategory[currentVideoIndex].category}
 				>
@@ -206,7 +226,7 @@ const VideoScreen = (props) => {
 					))}
 				</div>
 				<FileForm />
-			</div>
+			</div> */}
 		</div>
 	);
 };

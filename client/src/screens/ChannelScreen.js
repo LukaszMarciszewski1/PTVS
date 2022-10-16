@@ -10,7 +10,7 @@ import { makeStyles, AppBar } from "@material-ui/core";
 import a11yProps from "../components/Tabs/a11yProps";
 import NavTabs from "../components/Tabs/NavTabs";
 import StyledTab from "../components/Tabs/TabHorizontal";
-import Channel from "../components/Channel/Channel";
+import Channel from "../components/Channels/Channels";
 import Loading from "../components/Loading/Loading";
 
 const useStyles = makeStyles((theme) => ({
