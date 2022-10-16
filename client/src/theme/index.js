@@ -14,6 +14,8 @@ export const theme = createMuiTheme({
 	},
 	colors: {
 		white: "#fff",
+		lightGrey: '#e0e0e0',
+		grey: '#bdbdbd',
 		cardListBg: "rgba(31, 41, 56, .35)",
 		cardListBgActive: "rgb(40, 50, 60)",
 		dark: "#0f151b",

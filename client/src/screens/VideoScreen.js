@@ -13,7 +13,7 @@ import Loading from '../components/Loading/Loading'
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    maxWidth: 1650,
+    maxWidth: 1800,
     height: 'calc(100vh - 100px)',
     display: 'flex',
     margin: '15px auto 40px',
@@ -95,7 +95,7 @@ const VideoScreen = (props) => {
   const { videos, video, trailer, videoCategory, loading, getSelectMovie } =
     useContext(ApiContext)
   const [playing, setPlaying] = useState(true)
-  const MOVIE_URL = `https://www.youtube.com/watch?v=${trailer.key}`
+  // const MOVIE_URL = `https://www.youtube.com/watch?v=${trailer.key}`
   const [categoryName, setCategoryName] = useState('')
   const [categoryIndex, setCategoryIndex] = useState(0)
 
@@ -108,7 +108,7 @@ const VideoScreen = (props) => {
 
   const getCategoryName = () => {
     let activeCategory = categoryData.find((cat) => cat.index === categoryIndex)
-    return  activeCategory ? activeCategory.category : ''
+    return activeCategory ? activeCategory.category : ''
   }
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const VideoScreen = (props) => {
 
   useEffect(() => {
     if (video) {
-      setCategoryName(videoCategory.name)
+      // setCategoryName(videoCategory.name)
       setCategoryIndex(getCategoryIndex())
     }
   }, [videoCategory])
@@ -141,9 +141,9 @@ const VideoScreen = (props) => {
             <ActiveVideo video={video}>
               <ReactPlayer
                 className='react-player'
-                url={MOVIE_URL}
+                url={`https://www.youtube.com/watch?v=${trailer}`}
                 width='100%'
-                height='500px'
+                height='600px'
                 controls={true}
                 playing={playing}
                 onEnded={() => setPlaying(false)}

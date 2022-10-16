@@ -71,7 +71,7 @@ const ChanelScreen = () => {
 			<Switch>
 				{categoryData.map((item) => (
 					<Route path={item.path} key={item.index}>
-						<Channel data={videos} category={item.category} />
+						<Channel data={videos} category={item.genre_ids[0]} />
 					</Route>
 				))}
 			</Switch>

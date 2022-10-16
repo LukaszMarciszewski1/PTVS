@@ -59,7 +59,7 @@ const HomePage = () => {
 		<div className={classes.container}>
 			<NewVideo
 				img={newVideo.poster_path}
-				newVideo={newVideo._id}
+				newVideo={newVideo.id}
 				title={newVideo.title}
 				description={newVideo.description}
 			/>
