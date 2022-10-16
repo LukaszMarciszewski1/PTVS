@@ -55,8 +55,6 @@ const HomePage = () => {
 		return <Loading />;
 	}
 
-	console.log(videos);
-
 	return (
 		<div className={classes.container}>
 			<NewVideo

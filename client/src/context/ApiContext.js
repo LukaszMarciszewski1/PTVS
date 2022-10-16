@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import api from "../helpers/api";
 import axios from "axios";
 
 export const ApiContext = createContext(null);
@@ -7,11 +6,10 @@ export const ApiContext = createContext(null);
 const ApiProvider = ({ children }) => {
 	const [videos, setVideos] = useState([]);
 	const [video, setVideo] = useState({});
-	const [selectVideo, setSelectVideo] = useState({});
 	const [newVideo, setNewVideo] = useState({});
 	const [loading, setLoading] = useState(false);
-	const [latestMove, setLatestMove] = useState({});
-	const [trailer, setTrailer] = useState({})
+	const [trailer, setTrailer] = useState({});
+	const [videoCategory, setVideoCategory] = useState('')
 
 	const findLastItem = (data) => {
 		const lastItem = data.find(() => data.indexOf(data.length));
@@ -33,15 +31,6 @@ const ApiProvider = ({ children }) => {
 		setNewVideo(lastMove);
 	};
 
-	const fetchLatestMove = async () => {
-		const { data } = await axios.get(`${API_URL}/movie/now_playing`, {
-			params: {
-				api_key: process.env.REACT_APP_MOVIE_API_KEY,
-			},
-		});
-	};
-	fetchLatestMove();
-
 	const fetchMovie = async (id) => {
 		const { data } = await axios(`${API_URL}/movie/${id}videos`, {
 			params: {
@@ -50,23 +39,34 @@ const ApiProvider = ({ children }) => {
 			},
 		});
 		if (data.videos && data.videos.results) {
-			const trailer = data.videos.results.find(vid => vid.name === "Official Trailer")
-			setTrailer(data.videos.results[0])
-	  }
-		setVideo(data)
+			setTrailer(data.videos.results[0]);
+		}
+		return data;
 	};
 
-	const selectMovie = async (id) => {
+	const getSelectMovie = async (id) => {
 		const movie = await fetchMovie(id);
-		setVideo(movie)
+		setVideo(movie);
+		setVideoCategory(movie.genres[0])
 	};
+
 
 	useEffect(() => {
 		fetchMovies();
 	}, []);
 
 	return (
-		<ApiContext.Provider value={{ videos, video, trailer, newVideo, loading, selectMovie }}>
+		<ApiContext.Provider
+			value={{
+				videos,
+				video,
+				trailer,
+				newVideo,
+				loading,
+				videoCategory,
+				getSelectMovie,
+			}}
+		>
 			{children}
 		</ApiContext.Provider>
 	);

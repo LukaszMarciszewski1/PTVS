@@ -1,6 +1,5 @@
-import React, { lazy, Suspense, useContext } from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
 import ApiProvider from "./context/ApiContext";
 import AuthProvider from "./context/AuthContext";
 import { ThemeProvider } from "@material-ui/styles";
@@ -17,7 +16,7 @@ const ChannelScreen = lazy(() => import("./screens/ChannelScreen"));
 const Auth = lazy(() => import("./components/Auth/Auth"));
 
 function App() {
-	const { user } = useContext(AuthContext);
+
 	return (
 		<ThemeProvider theme={theme}>
 			<AuthProvider>

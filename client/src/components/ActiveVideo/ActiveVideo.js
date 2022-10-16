@@ -2,6 +2,11 @@ import React from "react";
 import { makeStyles, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+	root: {
+		width: "100%",
+		height: "100%",
+		minHeight: 500,
+	},
 	title: {
 		fontWeight: 500,
 	},
@@ -15,7 +20,7 @@ const ActiveVideo = ({ video, children }) => {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<div className={classes.root}>
 			<div className={classes.video}>{children}</div>
 			<div className={classes.description}>
 				<Typography
@@ -34,7 +39,7 @@ const ActiveVideo = ({ video, children }) => {
 					gutterBottom
 					style={{ opacity: 0.8 }}
 				>
-					{video.time}
+					{`Release date: ${video.release_date}`}
 				</Typography>
 			</div>
 		</div>

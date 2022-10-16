@@ -49,19 +49,19 @@ const useStyles = makeStyles((theme) => ({
 
 const CardList = ({ data, active, category, setCategory }) => {
 	const classes = useStyles();
-
+	const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
 	return (
 		<div>
 			{data.map((card) =>
-				card.category === category ? (
+				card.genre_ids[0] === category ? (
 					<div
 						className={
-							card._id === active._id ? classes.active : null
+							card.id === active.id ? classes.active : null
 						}
-						key={card._id}
+						key={card.id}
 						onClick={setCategory}
 					>
-						<Link to={`/video/${card._id}`}>
+						<Link to={`/video/${card.id}`}>
 							<Paper elevation={0} className={classes.paper}>
 								<Grid container spacing={2}>
 									<Grid item>
@@ -71,7 +71,10 @@ const CardList = ({ data, active, category, setCategory }) => {
 											<img
 												className={classes.img}
 												alt="img"
-												src={card.img}
+												src={
+													IMAGE_PATH +
+													card.poster_path
+												}
 											/>
 										</ButtonBase>
 									</Grid>
@@ -97,7 +100,7 @@ const CardList = ({ data, active, category, setCategory }) => {
 													component="p"
 													gutterBottom
 												>
-													{card.time}
+													{`Release date: ${card.release_date}`}
 												</Typography>
 											</Grid>
 										</Grid>

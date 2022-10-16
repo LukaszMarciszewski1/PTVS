@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NewVideoBaner = ({ img, newVideo, title, description }) => {
 	const classes = useStyles();
-	const IMAGE_PATH = "https://image.tmdb.org/t/p/w1280";
+	const IMAGE_PATH = "https://image.tmdb.org/t/p/w500";
 	return (
 		<div className={classes.root}>
 			<div className={classes.textContainer}>
