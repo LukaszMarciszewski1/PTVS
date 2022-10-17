@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 	innerText: {
 		fontWeight: "lighter",
 		lineHeight: "1.8rem",
-		color: theme.colors.white,
+		color: theme.colors.lightGrey,
 		letterSpacing: 1,
 		display: "inline",
 		padding: 0,
