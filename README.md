@@ -1,6 +1,6 @@
 # PTVS Vision Website
 
-Website with videos and social media login panel. The project is in progress
+Website with video trailers, uses TMDB api
 
 ## Demo
 
@@ -9,10 +9,8 @@ Website with videos and social media login panel. The project is in progress
 
 ## Built with
 
-- React
+- React.js
 - Material-UI
-- Node (version 14.17.0) & Express
-- MongoDB: Mongoose
 - API TMDB
 - Auth: firebase
 
