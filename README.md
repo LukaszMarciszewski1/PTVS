@@ -11,8 +11,6 @@ Website with videos and social media login panel. The project is in progress
 
 - React
 - Material-UI
-- Node (version 14.17.0) & Express
-- MongoDB: Mongoose
 - API TMDB
 - Auth: firebase
 
