@@ -9,7 +9,7 @@ Website with videos and social media login panel. The project is in progress
 
 ## Built with
 
-- React
+- React.js
 - Material-UI
 - API TMDB
 - Auth: firebase
