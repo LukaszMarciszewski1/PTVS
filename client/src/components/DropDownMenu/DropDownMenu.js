@@ -6,7 +6,6 @@ import {
 	Typography,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { signInWithGoogle } from "../../firebase/firebase";
 
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 

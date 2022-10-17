@@ -37,8 +37,8 @@ const Channel = ({ category, data }) => {
 				spacing={1}
 			>
 				{data.map((card) =>
-					card.category === category ? (
-						<Grid item xs={12} sm={5} md={4} lg={3} key={card._id}>
+					card.genre_ids[0] === category ? (
+						<Grid item xs={12} sm={5} md={4} lg={3} key={card.id}>
 							<VideoCard
 								card={card}
 								className={classes.cards}

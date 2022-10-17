@@ -7,7 +7,7 @@ import { makeStyles, AppBar } from "@material-ui/core";
 
 import a11yProps from "../components/Tabs/a11yProps";
 import TabPanel from "../components/Tabs/TabPanel";
-import NewVideo from "../components/NewVideo/NewVideo";
+import NewVideo from "../components/NewVideoBanner/NewVideoBanner";
 import Carousel from "../components/Carousel/Carousel";
 import Info from "../components/Info/Info";
 import NavTabs from "../components/Tabs/NavTabs";
@@ -58,8 +58,8 @@ const HomePage = () => {
 	return (
 		<div className={classes.container}>
 			<NewVideo
-				img={newVideo.img}
-				newVideo={newVideo._id}
+				img={newVideo.poster_path}
+				newVideo={newVideo.id}
 				title={newVideo.title}
 				description={newVideo.description}
 			/>
@@ -87,8 +87,9 @@ const HomePage = () => {
 				>
 					<Carousel
 						data={videos}
-						goToCategory={item.path}
-						category={item.category}
+						categoryName={item.category}
+						path={item.path}
+						genreId={item.genre_ids}
 					/>
 				</TabPanel>
 			))}

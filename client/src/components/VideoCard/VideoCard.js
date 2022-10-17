@@ -29,6 +29,12 @@ const useStyles = makeStyles((theme) => ({
 			height: 150,
 		},
 	},
+	title: {
+		maxWidth: 350,
+		whiteSpace: "nowrap",
+		overflow: "hidden",
+		textOverflow: "ellipsis",
+	},
 	cardContent: {
 		marginBottom: 30,
 		position: "relative",
@@ -47,31 +53,32 @@ const useStyles = makeStyles((theme) => ({
 
 const VideoCard = ({ card }) => {
 	const classes = useStyles();
-
+	const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
 	return (
-		<Link key={card._id} to={`/video/${card._id}`}>
+		<Link key={card.id} to={`/video/${card.id}`}>
 			<Card className={classes.card} elevation={3}>
 				<CardActionArea>
 					<CardMedia
 						className={classes.media}
-						image={card.img}
-						component="img"
+						image={IMAGE_PATH + card.poster_path}
 						alt={card.title}
+						component="img"
 					/>
 					<CardContent className={classes.cardContent}>
 						<Typography className={classes.category} gutterBottom>
-							{card.category}
+							{`Release date: ${card.release_date}`}
 						</Typography>
 						<Typography
 							gutterBottom
 							variant="h6"
 							component="h3"
 							color="inherit"
+							className={classes.title}
 						>
 							{card.title}
 						</Typography>
 						<Typography variant="caption" gutterBottom>
-							{card.time}
+							{`Release date: ${card.release_date}`}
 						</Typography>
 					</CardContent>
 				</CardActionArea>

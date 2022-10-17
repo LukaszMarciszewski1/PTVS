@@ -33,11 +33,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-const Title = ({ goToCategory, category }) => {
+const Title = ({ path, category }) => {
 	const classes = useStyles();
 	return (
 		<div className={classes.titleContent}>
-			<Link to={goToCategory} className={classes.goToButton}>
+			<Link to={path} className={classes.goToButton}>
 				{category}
 				<KeyboardArrowRightIcon className={classes.icon} />
 			</Link>
