@@ -47,11 +47,11 @@ const useStyles = makeStyles((theme) => ({
   },
   active: {
     color: grey[200],
-    backgroundColor: theme.colors.cardListBg,
+    backgroundColor: theme.colors.colorSTactive,
   },
 }))
 
-const CardList = ({ data, active, category, setCategory }) => {
+const CardList = ({ data, active, category }) => {
   const classes = useStyles()
   const IMAGE_PATH = 'https://image.tmdb.org/t/p/w342'
   return (
@@ -59,9 +59,8 @@ const CardList = ({ data, active, category, setCategory }) => {
       {data.map((card) =>
         card.genre_ids[0] === category ? (
           <div
-            className={card.id === active.id ? classes.active : null}
+            className={card.id === active ? classes.active : null}
             key={card.id}
-            onClick={setCategory}
           >
             <Link to={`/video/${card.id}`}>
               <Paper elevation={0} className={classes.paper}>

@@ -26,16 +26,28 @@ const categoryData = [
 		genre_ids: 35
 	},
 	{
-		category: "Crime",
-		path: "/Crime",
+		category: "Thriller",
+		path: "/Thriller",
 		index: 4,
-		genre_ids: 80
+		genre_ids: 53
 	},
 	{
-		category: "Documentary",
-		path: "/Documentary",
+		category: "Drama",
+		path: "/Drama",
 		index: 5,
-		genre_ids: 99
+		genre_ids: 18
+	},
+	{
+		category: "Fantasy",
+		path: "/Fantasy",
+		index: 6,
+		genre_ids: 14
+	},
+	{
+		category: "Science Fiction",
+		path: "/Science Fiction",
+		index: 7,
+		genre_ids: 878
 	},
 ];
 export default categoryData;

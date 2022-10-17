@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ActiveVideo = ({ video, children }) => {
   const classes = useStyles()
-  console.log(video)
 
   const countryProduction = video.production_countries
     ?.map((country) => country.name)

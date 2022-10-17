@@ -54,8 +54,8 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     marginTop: 100,
-    maxHeight: 500,
-    height: 500,
+    maxHeight: 550,
+    height: 550,
     overflowY: 'scroll',
     paddingRight: 10,
     '@media (max-width: 1100px)': {
@@ -98,6 +98,7 @@ const VideoScreen = (props) => {
   // const MOVIE_URL = `https://www.youtube.com/watch?v=${trailer.key}`
   const [categoryName, setCategoryName] = useState('')
   const [categoryIndex, setCategoryIndex] = useState(0)
+  const [activeId, setActiveId] = useState(0)
 
   const getCategoryIndex = () => {
     let activeCategory = categoryData.find(
@@ -112,13 +113,17 @@ const VideoScreen = (props) => {
   }
 
   useEffect(() => {
+    if(!video) return
+    setActiveId(Number(props.match.params.id))
+  }, [video])
+
+  useEffect(() => {
     getSelectMovie(props.match.params.id)
     setPlaying(false)
   }, [props.match.params.id])
 
   useEffect(() => {
     if (video) {
-      // setCategoryName(videoCategory.name)
       setCategoryIndex(getCategoryIndex())
     }
   }, [videoCategory])
@@ -183,9 +188,8 @@ const VideoScreen = (props) => {
                 >
                   <CardsList
                     data={videos}
-                    active={0}
+                    active={activeId}
                     category={item.genre_ids}
-                    // setCategory={0}
                   />
                 </TabPanel>
               ))}

@@ -13,9 +13,8 @@ const ApiProvider = ({ children }) => {
   const API_URL = 'https://api.themoviedb.org/3'
 
   const fetchMovies = async () => {
-		const numbers = [1, 2, 3, 4, 5, 6, 7 , 8 , 9]
 		const pages = []
-		for(let i = 1; i <= numbers.length; ++i) {
+		for(let i = 1; i <= 10; ++i) {
 			await axios.get(`${API_URL}/discover/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=${i}`)
 			.then(res => pages.push(...res.data.results))
 			.catch(err => console.log(err))
@@ -36,7 +35,6 @@ const ApiProvider = ({ children }) => {
       },
     })
     if (data.videos && data.videos.results) {
-			const trailer = data.videos.results.find(vid => vid.name === "Official Trailer")
       setTrailer(data.videos.results[0].key)
     }
     return data
