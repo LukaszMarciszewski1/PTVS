@@ -114,9 +114,16 @@ const useStyles = makeStyles((theme) => ({
 			margin: theme.spacing(1),
 		},
 	},
+	date: {
+		fontSize: 15,
+		fontWeight: "lighter",
+		letterSpacing: 1,
+		color: theme.colors.lightGrey,
+		marginBottom: theme.spacing(1),
+	},
 }));
 
-const NewVideoBaner = ({ img, newVideo, title, description }) => {
+const NewVideoBaner = ({ img, newVideo, title, date, vote }) => {
 	const classes = useStyles();
 	const IMAGE_PATH = "https://image.tmdb.org/t/p/w500";
 	return (
@@ -124,6 +131,13 @@ const NewVideoBaner = ({ img, newVideo, title, description }) => {
 			<div className={classes.textContainer}>
 				<img className={classes.img} src={IMAGE_PATH + img} alt="new video" />
 				<div className={classes.text}>
+				<Typography
+						variant="subtitle1"
+						component="p"
+						className={classes.date}
+					>
+						{`Release date: ${date}`}
+					</Typography>
 					<Typography
 						variant="h3"
 						component="h1"
@@ -136,7 +150,7 @@ const NewVideoBaner = ({ img, newVideo, title, description }) => {
 						component="p"
 						className={classes.p}
 					>
-						{description}
+						Vote average: {vote}
 					</Typography>
 				</div>
 			</div>

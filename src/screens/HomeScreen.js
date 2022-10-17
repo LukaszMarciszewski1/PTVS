@@ -61,7 +61,8 @@ const HomePage = () => {
 				img={newVideo.poster_path}
 				newVideo={newVideo.id}
 				title={newVideo.title}
-				description={newVideo.description}
+				vote={newVideo.vote_average}
+				date={newVideo.release_date}
 			/>
 			<AppBar
 				position="static"
