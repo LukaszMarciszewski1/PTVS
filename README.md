@@ -1,6 +1,6 @@
 # PTVS Vision Website
 
-Website with videos and social media login panel. The project is in progress
+Trailer website using TMDB api
 
 ## Demo
 
