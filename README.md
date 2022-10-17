@@ -4,7 +4,7 @@ Website with videos and social media login panel. The project is in progress
 
 ## Demo
 
-- 👉 Heroku : [https://ptvs.netlify.app/](https://ptvs.netlify.app/)
+- 👉 Netlify : [https://ptvs.netlify.app/](https://ptvs.netlify.app/)
 
 
 ## Built with
