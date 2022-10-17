@@ -40,19 +40,13 @@ const ActiveVideo = ({ video, children }) => {
         <Typography variant='subtitle2'>
           {`Release date: ${video.release_date}`}
         </Typography>
-        {/* {video.production_countries?.map((country) => ( */}
         <Typography
-          // key={country.name}
           variant='subtitle2'
           gutterBottom
           styles={{ marginBottom: '10px' }}
         >
           Production: {countryProduction}
         </Typography>
-        {/* ))} */}
-        {/* <Typography variant='body1' gutterBottom>
-          {video.overview}
-        </Typography> */}
       </div>
     </div>
   )

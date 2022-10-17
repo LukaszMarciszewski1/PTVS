@@ -10,7 +10,6 @@ import {
 	CardMedia,
 	Typography,
 } from "@material-ui/core";
-import { grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
 	card: {
@@ -42,11 +41,11 @@ const useStyles = makeStyles((theme) => ({
 			marginBottom: 10,
 		},
 	},
-	category: {
-		color: grey[300],
-		fontSize: 13,
+	date: {
+		fontSize: 14,
 		fontWeight: "lighter",
 		letterSpacing: 1,
+		color: theme.colors.lightGrey,
 		marginBottom: theme.spacing(1),
 	},
 }));
@@ -54,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
 const VideoCard = ({ card }) => {
 	const classes = useStyles();
 	const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";
+
 	return (
 		<Link key={card.id} to={`/video/${card.id}`}>
 			<Card className={classes.card} elevation={3}>
@@ -65,7 +65,7 @@ const VideoCard = ({ card }) => {
 						component="img"
 					/>
 					<CardContent className={classes.cardContent}>
-						<Typography className={classes.category} gutterBottom>
+						<Typography className={classes.date} gutterBottom>
 							{`Release date: ${card.release_date}`}
 						</Typography>
 						<Typography
@@ -77,8 +77,11 @@ const VideoCard = ({ card }) => {
 						>
 							{card.title}
 						</Typography>
-						<Typography variant="caption" gutterBottom>
-							{`Release date: ${card.release_date}`}
+						<Typography
+							variant="subtitle2"
+							gutterBottom
+						>
+							Vote average: {card.vote_average}
 						</Typography>
 					</CardContent>
 				</CardActionArea>
