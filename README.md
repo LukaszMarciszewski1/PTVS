@@ -1,6 +1,6 @@
 # PTVS Vision Website
 
-Trailer website using TMDB api
+Website with video trailers, uses TMDB api
 
 ## Demo
 
